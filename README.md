@@ -19,7 +19,8 @@
 
 ```sh
 node check.mjs          # 캐릭터 규칙 · 링크 검사
-zsh dev/shots.sh <폴더>  # 세 페이지를 360 · 390 · 1280 폭, 라이트 · 다크로 찍기
+zsh dev/shots.sh <폴더>  # 세 페이지를 360 · 390 · 1280 폭, 라이트 · 다크로 찍기(SEG=2000이면 나눠 찍음)
+zsh dev/og.sh           # dev/og.html로 assets/og.png(공유 이미지) 다시 만들기
 python3 -m http.server  # 로컬에서 열기(ES 모듈이라 file://로는 캐릭터가 안 보임)
 ```
 

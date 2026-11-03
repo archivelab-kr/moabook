@@ -1,6 +1,6 @@
 // 사이트 확인: node check.mjs
 // 1) 캐릭터 그림이 앱 원본 규칙대로 옮겨졌는지
-// 2) (Task 5) 링크 검사
+// 2) 모든 HTML의 상대 경로가 실제 파일을 가리키고, '/'로 시작하는 절대 경로가 없는지
 import assert from 'node:assert/strict'
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs'
 import { join, dirname, relative } from 'node:path'
@@ -97,6 +97,55 @@ check('소품은 몸 밖으로 넘쳐 그림', () => {
   const svg = toSVG(moa, { accessories: ['partyHat'] })
   assert.match(svg, /viewBox="0 0 14 14"/)
   assert.match(svg, /y="-/)
+})
+
+// 링크 ------------------------------------------------------------------
+
+function htmlFiles(dir) {
+  return readdirSync(dir).flatMap(name => {
+    if (name.startsWith('.') || name === 'node_modules') return []
+    const p = join(dir, name)
+    if (statSync(p).isDirectory()) return htmlFiles(p)
+    return name.endsWith('.html') ? [p] : []
+  })
+}
+
+const pages = htmlFiles(root)
+
+check('세 페이지가 있음', () => {
+  for (const p of ['index.html', 'privacy/index.html', 'support/index.html']) {
+    assert.ok(existsSync(join(root, p)), p)
+  }
+})
+
+check('상대 경로만 쓰고 모두 실제 파일', () => {
+  for (const file of pages) {
+    const html = readFileSync(file, 'utf8')
+    const refs = [...html.matchAll(/\b(?:href|src|content)="([^"]+)"/g)].map(m => m[1])
+    for (const ref of refs) {
+      const name = relative(root, file)
+      if (/^(https?:|mailto:|#|data:)/.test(ref)) continue
+      if (!/[./]/.test(ref) || /\s/.test(ref)) continue // content="width=device-width" 같은 값
+      if (ref.startsWith('/')) assert.fail(`${name}: 절대 경로 ${ref}`)
+      if (!/^\.{0,2}\/?[\w./-]+$/.test(ref)) continue
+      const clean = ref.split(/[?#]/)[0]
+      if (!clean.includes('/') && !clean.includes('.')) continue
+      let target = join(dirname(file), clean)
+      if (clean.endsWith('/') || clean === '.' || clean === '..') target = join(target, 'index.html')
+      assert.ok(existsSync(target), `${name}: ${ref} 없음`)
+    }
+  }
+})
+
+check('외부 요청 없음(App Store · 문의 링크는 config.js에만)', () => {
+  for (const file of pages) {
+    const html = readFileSync(file, 'utf8')
+    assert.ok(!/<(script|link|img|iframe)[^>]+(src|href)="https?:/.test(html), relative(root, file))
+    assert.ok(!/apps\.apple\.com|forms\.gle/.test(html), `${relative(root, file)}: 바깥 주소는 config.js에만`)
+  }
+  const config = readFileSync(join(root, 'config.js'), 'utf8')
+  assert.match(config, /apps\.apple\.com\/app\/id6472587949/)
+  assert.match(config, /forms\.gle\/UtCTKWL9Msymuf639/)
 })
 
 console.log(`\n${passed}개 통과`)

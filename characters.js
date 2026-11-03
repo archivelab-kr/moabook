@@ -46,7 +46,6 @@ export const CHARACTERS = [
     id: 'moa',
     name: '모아',
     kind: '앨범 책',
-    line: '안녕! 나는 모아야. 사진을 앨범에 차곡차곡 모아 줄게',
     theme: { light: '#007AFF', dark: '#0A84FF' },
     rows: [
       '.kkkkkkkkkk.',
@@ -68,7 +67,6 @@ export const CHARACTERS = [
     id: 'chalkak',
     name: '찰칵',
     kind: '카메라',
-    line: '찰칵! 나는 찰칵이야. 좋은 사진은 내가 알아봐',
     theme: { light: '#5E5CE6', dark: '#7D7AFF' },
     rows: [
       '...kkkk.....',
@@ -91,7 +89,6 @@ export const CHARACTERS = [
     id: 'pola',
     name: '폴라',
     kind: '즉석 사진',
-    line: '안녕, 나는 폴라야. 한 장 한 장 소중하게 남겨 줄게',
     theme: { light: '#1D9BD8', dark: '#1D9BD8' },
     rows: [
       '.kkkkkkkkkk.',
@@ -113,7 +110,6 @@ export const CHARACTERS = [
     id: 'rolly',
     name: '롤리',
     kind: '필름 통',
-    line: '나는 롤리야! 필름처럼 차곡차곡 감아 둘게',
     theme: { light: '#E07800', dark: '#E07800' },
     rows: [
       '....kkkk....',
@@ -135,7 +131,6 @@ export const CHARACTERS = [
     id: 'nyang',
     name: '냥이',
     kind: '고양이',
-    line: '야옹~ 나는 냥이야. 닮은 사진은 내가 찾아낼게',
     theme: { light: '#12A58A', dark: '#12A58A' },
     rows: [
       '.kk......kk.',
