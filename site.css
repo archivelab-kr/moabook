@@ -1,0 +1,397 @@
+/* 모아북 웹사이트 공통 스타일
+   색은 앱 Colors.xcassets(background · secondaryBackground · label · secondaryLabel · primary1 · theme<캐릭터>)와
+   처음 실행 대화창(FirstRunPalette, PixelFrame)에서 가져왔습니다. 한 칸(--u)은 4px 픽셀입니다. */
+
+:root {
+  color-scheme: light dark;
+  --u: 4px;
+
+  --bg: #ffffff;
+  --page: #f2f3f8;
+  --box: #ffffff;
+  --text: #000000;
+  --text-2: rgba(60, 60, 67, 0.72);
+  --outline: #2c3048;
+  --inner: #e4e7f1;
+  --ink: #26283a;
+
+  --primary1: #007aff;
+  --primary2: #ff3b30;
+  --pink: #ff6b9a;
+  --yellow: #ffc93c;
+  --mint: #2fb58f;
+
+  --moa: #007aff;
+  --chalkak: #5e5ce6;
+  --pola: #1d9bd8;
+  --rolly: #e07800;
+  --nyang: #12a58a;
+
+  --tint: 12%;
+  --font: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", system-ui, sans-serif;
+  --wrap: min(1080px, 100% - 32px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --page: #1c1c1e;
+    --box: #1c1c1e;
+    --text: #ffffff;
+    --text-2: rgba(235, 235, 245, 0.7);
+    --outline: #ffffff;
+    --inner: rgba(255, 255, 255, 0.18);
+    --primary1: #0a84ff;
+    --primary2: #ff453a;
+    --pink: #ff7faa;
+    --yellow: #ffd25a;
+    --mint: #3ccb9f;
+    --moa: #0a84ff;
+    --chalkak: #7d7aff;
+    --tint: 22%;
+  }
+}
+
+/* 기본 ------------------------------------------------------------------ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.65;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { line-height: 1.22; letter-spacing: -0.02em; text-wrap: balance; }
+p { text-wrap: pretty; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--primary1); text-underline-offset: 0.2em; }
+
+:focus-visible {
+  outline: 3px solid var(--primary1);
+  outline-offset: 3px;
+}
+
+.wrap { width: var(--wrap); margin-inline: auto; }
+
+.skip {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  padding: 8px 12px;
+  background: var(--box);
+  z-index: 10;
+}
+.skip:focus { top: 12px; }
+
+/* 캐릭터 자리: main.js가 SVG로 채웁니다. 자바스크립트가 꺼지면 비어 있습니다. */
+.char {
+  display: inline-block;
+  vertical-align: bottom;
+  line-height: 0;
+  flex: none;
+}
+.char svg { display: block; width: 100%; height: 100%; overflow: visible; }
+
+/* 누르면 표정이 바뀌는 캐릭터 */
+.char-btn {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: none;
+  cursor: pointer;
+  line-height: 0;
+  border-radius: 8px;
+  -webkit-tap-highlight-color: transparent;
+}
+.char-btn:active .char { transform: translateY(var(--u)); }
+
+/* 픽셀 테두리 ------------------------------------------------------------
+   앱 PixelFrame의 '계단 모서리': 바깥 테두리 칸(모서리 한 칸은 비움) → 안쪽 밝은 선 → 바탕.
+   네 변을 box-shadow 한 칸으로 그려 모서리 칸이 비게 합니다. */
+
+.pixel, .bubble, .bubble .who, .store, .button {
+  --frame-fill: var(--box);
+  --frame-line: var(--outline);
+  --frame-inner: var(--inner);
+}
+.pixel, .bubble, .bubble .who, .store, .button {
+  background: var(--frame-fill);
+  box-shadow:
+    0 calc(var(--u) * -1) 0 0 var(--frame-line),
+    0 var(--u) 0 0 var(--frame-line),
+    calc(var(--u) * -1) 0 0 0 var(--frame-line),
+    var(--u) 0 0 0 var(--frame-line),
+    inset 0 0 0 var(--u) var(--frame-inner);
+}
+
+/* 말풍선 ------------------------------------------------------------------ */
+
+.bubble {
+  position: relative;
+  display: block;
+  max-width: 34ch;
+  padding: 18px 20px 16px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.55;
+  color: var(--text);
+  margin: calc(var(--u) * 4) var(--u) calc(var(--u) * 4);
+  transform-origin: var(--origin, 24px 110%);
+}
+
+/* 꼬리: 4px 칸을 box-shadow로 찍습니다. 테두리 · 안쪽 선 칸을 바탕색으로 덮고 둘레에 선 칸을 둡니다. */
+.bubble::after {
+  content: "";
+  position: absolute;
+  width: var(--u);
+  height: var(--u);
+  background: var(--frame-fill);
+}
+
+/* 아래를 가리키는 꼬리(말하는 친구가 아래에 있을 때) */
+.bubble:not(.tail-left):not(.tail-right):not(.tail-none)::after {
+  left: var(--tail, 28px);
+  top: 100%;
+  box-shadow:
+    0 calc(var(--u) * -1) 0 0 var(--frame-fill),
+    var(--u) calc(var(--u) * -1) 0 0 var(--frame-fill),
+    calc(var(--u) * 2) calc(var(--u) * -1) 0 0 var(--frame-fill),
+    var(--u) 0 0 0 var(--frame-fill),
+    calc(var(--u) * 2) 0 0 0 var(--frame-fill),
+    calc(var(--u) * 3) 0 0 0 var(--frame-line),
+    calc(var(--u) * -1) var(--u) 0 0 var(--frame-line),
+    0 var(--u) 0 0 var(--frame-fill),
+    var(--u) var(--u) 0 0 var(--frame-fill),
+    calc(var(--u) * 2) var(--u) 0 0 var(--frame-line),
+    calc(var(--u) * -1) calc(var(--u) * 2) 0 0 var(--frame-line),
+    0 calc(var(--u) * 2) 0 0 var(--frame-fill),
+    var(--u) calc(var(--u) * 2) 0 0 var(--frame-line),
+    calc(var(--u) * -1) calc(var(--u) * 3) 0 0 var(--frame-line),
+    0 calc(var(--u) * 3) 0 0 var(--frame-line);
+}
+.bubble.flip::after { left: auto; right: var(--tail, 28px); transform: scaleX(-1); }
+
+/* 왼쪽을 가리키는 꼬리(말하는 친구가 왼쪽에 있을 때) */
+.bubble.tail-left::after {
+  left: calc(var(--u) * -1);
+  top: var(--tail, 22px);
+  box-shadow:
+    var(--u) 0 0 0 var(--frame-fill),
+    var(--u) var(--u) 0 0 var(--frame-fill),
+    var(--u) calc(var(--u) * 2) 0 0 var(--frame-fill),
+    0 var(--u) 0 0 var(--frame-fill),
+    0 calc(var(--u) * 2) 0 0 var(--frame-fill),
+    0 calc(var(--u) * 3) 0 0 var(--frame-line),
+    calc(var(--u) * -1) calc(var(--u) * -1) 0 0 var(--frame-line),
+    calc(var(--u) * -1) 0 0 0 var(--frame-fill),
+    calc(var(--u) * -1) var(--u) 0 0 var(--frame-fill),
+    calc(var(--u) * -1) calc(var(--u) * 2) 0 0 var(--frame-line),
+    calc(var(--u) * -2) calc(var(--u) * -1) 0 0 var(--frame-line),
+    calc(var(--u) * -2) 0 0 0 var(--frame-fill),
+    calc(var(--u) * -2) var(--u) 0 0 var(--frame-line),
+    calc(var(--u) * -3) calc(var(--u) * -1) 0 0 var(--frame-line),
+    calc(var(--u) * -3) 0 0 0 var(--frame-line);
+}
+
+/* 오른쪽을 가리키는 꼬리 */
+.bubble.tail-right::after {
+  left: 100%;
+  top: var(--tail, 22px);
+  box-shadow:
+    calc(var(--u) * -1) 0 0 0 var(--frame-fill),
+    calc(var(--u) * -1) var(--u) 0 0 var(--frame-fill),
+    calc(var(--u) * -1) calc(var(--u) * 2) 0 0 var(--frame-fill),
+    0 var(--u) 0 0 var(--frame-fill),
+    0 calc(var(--u) * 2) 0 0 var(--frame-fill),
+    0 calc(var(--u) * 3) 0 0 var(--frame-line),
+    var(--u) calc(var(--u) * -1) 0 0 var(--frame-line),
+    var(--u) 0 0 0 var(--frame-fill),
+    var(--u) var(--u) 0 0 var(--frame-fill),
+    var(--u) calc(var(--u) * 2) 0 0 var(--frame-line),
+    calc(var(--u) * 2) calc(var(--u) * -1) 0 0 var(--frame-line),
+    calc(var(--u) * 2) 0 0 0 var(--frame-fill),
+    calc(var(--u) * 2) var(--u) 0 0 var(--frame-line),
+    calc(var(--u) * 3) calc(var(--u) * -1) 0 0 var(--frame-line),
+    calc(var(--u) * 3) 0 0 0 var(--frame-line);
+}
+.bubble.tail-none::after { display: none; }
+
+/* 말하는 친구 이름표(앱 대화창처럼 위쪽 테두리에 걸침) */
+.bubble .who {
+  position: absolute;
+  left: 14px;
+  top: -15px;
+  padding: 1px 10px 2px;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.5;
+  color: #fff;
+  --frame-fill: var(--theme, var(--moa));
+  --frame-inner: transparent;
+  --u: 3px;
+}
+
+/* 자바스크립트가 있으면 화면에 들어올 때 계단식으로 튀어나옵니다(main.js가 .is-in을 붙임). */
+.js .bubble[data-pop] {
+  transform: scale(0.6);
+  opacity: 0;
+  transition: transform 0.28s steps(4, end), opacity 0.12s steps(2, end);
+}
+.js .bubble[data-pop].is-in { transform: none; opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .bubble[data-pop] { transform: none; opacity: 1; transition: none; }
+  .char-btn:active .char { transform: none; }
+}
+
+/* App Store 버튼 ---------------------------------------------------------- */
+
+.store {
+  --frame-fill: var(--theme, var(--primary1));
+  --frame-line: var(--outline);
+  --frame-inner: rgba(255, 255, 255, 0.22);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: var(--u);
+  padding: 14px 22px 14px 18px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: transform 0.08s steps(1, end);
+}
+.store:hover { filter: brightness(1.06); }
+.store:active { transform: translateY(var(--u)); }
+.store small { display: block; font-size: 12px; font-weight: 600; opacity: 0.86; letter-spacing: 0; }
+/* 아래로 받는 픽셀 화살표 */
+.store .get {
+  width: 20px;
+  height: 22px;
+  flex: none;
+  background:
+    linear-gradient(#fff 0 0) 8px 0 / 4px 14px no-repeat,
+    linear-gradient(#fff 0 0) 4px 10px / 12px 4px no-repeat,
+    linear-gradient(#fff 0 0) 0 6px / 4px 4px no-repeat,
+    linear-gradient(#fff 0 0) 16px 6px / 4px 4px no-repeat,
+    linear-gradient(#fff 0 0) 0 18px / 20px 4px no-repeat;
+}
+
+/* 보조 버튼(문의 등) */
+.button {
+  --frame-fill: var(--box);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: var(--u);
+  padding: 12px 20px;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+}
+.button:active { transform: translateY(var(--u)); }
+
+/* 머리글 ------------------------------------------------------------------ */
+
+.site-head {
+  position: relative;
+  z-index: 2;
+}
+.site-head .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 16px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 19px;
+  letter-spacing: -0.02em;
+}
+.brand .char { width: 28px; height: 28px; }
+.site-nav { display: flex; gap: 4px; }
+.site-nav a {
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+}
+.site-nav a:hover { background: color-mix(in srgb, var(--text) 7%, transparent); }
+.site-nav a[aria-current="page"] { background: color-mix(in srgb, var(--text) 9%, transparent); }
+
+/* 바닥글 ------------------------------------------------------------------ */
+
+.site-foot {
+  padding: 40px 0 48px;
+  color: var(--text-2);
+  font-size: 14px;
+}
+.site-foot .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+.site-foot nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.site-foot a { color: var(--text-2); text-decoration: none; font-weight: 600; }
+.site-foot a:hover { color: var(--text); text-decoration: underline; }
+.site-foot .marks { display: flex; align-items: flex-end; gap: 6px; }
+.site-foot .marks .char { width: 28px; height: 28px; }
+
+/* 둥근 카드 ---------------------------------------------------------------- */
+
+.card {
+  background: var(--box);
+  border-radius: 24px;
+  padding: 24px;
+}
+
+/* 문서 페이지(처리방침 · 지원) ---------------------------------------------- */
+
+.doc {
+  background: var(--page);
+  padding: 24px 0 64px;
+}
+.doc .wrap { max-width: 720px; }
+.doc-head {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  padding: 24px 0 28px;
+}
+.doc-head h1 { font-size: clamp(30px, 6vw, 44px); font-weight: 800; }
+.doc-head p { color: var(--text-2); margin-top: 6px; font-size: 15px; }
+.doc-head .char { width: 84px; height: 84px; margin-bottom: 4px; }
+.doc h2 { font-size: 20px; font-weight: 800; margin: 0 0 8px; }
+.doc .card + .card { margin-top: 12px; }
+.doc .card p + p, .doc .card ul { margin-top: 8px; }
+.doc ul { padding-left: 1.2em; margin: 0; }
+.doc li + li { margin-top: 4px; }
+.doc .note { color: var(--text-2); font-size: 15px; }

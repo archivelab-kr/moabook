@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>캐릭터 표 (확인용)</title>
+<link rel="stylesheet" href="../site.css">
+<style>
+  body { padding: 24px 0; }
+  .panels { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); width: var(--wrap); margin: 0 auto; }
+  .panel { padding: 20px; border-radius: 24px; }
+  .panel.light { background: #ffffff; color: #000; }
+  .panel.dark { background: #000000; color: #fff; }
+  table { border-collapse: collapse; width: 100%; }
+  th { font-size: 12px; font-weight: 700; padding: 4px; opacity: .7; }
+  td { padding: 6px; text-align: center; }
+  td svg { width: 56px; height: 56px; overflow: visible; }
+  .acc td svg { width: 70px; height: 70px; }
+  .acc { margin-top: 28px; }
+  .demo { width: var(--wrap); margin: 24px auto 0; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end; }
+</style>
+</head>
+<body>
+<div class="panels">
+  <section class="panel light" data-scheme="light"></section>
+  <section class="panel dark" data-scheme="dark"></section>
+</div>
+<div class="demo">
+  <p class="bubble" style="--theme: var(--moa)"><span class="who">모아</span>사진 2만 장, 어디서부터 해야 할지 모르겠죠?</p>
+  <p class="bubble tail-left"><span class="who" style="--theme: var(--rolly)">롤리</span>왼쪽 꼬리</p>
+  <p class="bubble tail-right"><span class="who" style="--theme: var(--nyang)">냥이</span>오른쪽 꼬리</p>
+  <a class="store" href="#"><span class="get"></span><span><small>무료로 받기</small>App Store에서 받기</span></a>
+  <a class="button" href="#">문의하기</a>
+</div>
+<script type="module">
+  import { CHARACTERS, MOODS, toSVG } from '../characters.js'
+  const accs = ['partyHat', 'crown', 'ribbon', 'strawHat', 'flower', 'heart', 'camera', 'scarf', 'sun']
+  for (const panel of document.querySelectorAll('.panel')) {
+    const scheme = panel.dataset.scheme
+    const head = '<tr><th></th>' + MOODS.map(m => `<th>${m}</th>`).join('') + '<th>blink</th></tr>'
+    const rows = CHARACTERS.map(c => '<tr><th>' + c.name + '</th>' +
+      MOODS.map(m => `<td>${toSVG(c, { mood: m, scheme })}</td>`).join('') +
+      `<td>${toSVG(c, { blinking: true, scheme })}</td></tr>`).join('')
+    const accRows = CHARACTERS.map(c => '<tr>' + accs.map((a, i) => i % 2 === CHARACTERS.indexOf(c) % 2 ? `<td>${toSVG(c, { scheme, accessories: [a] })}</td>` : '').join('') + '</tr>').join('')
+    panel.innerHTML = `<table>${head}${rows}</table><table class="acc">${accRows}</table>`
+  }
+</script>
+</body>
+</html>
