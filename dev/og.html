@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>공유 이미지 (확인용)</title>
+<link rel="stylesheet" href="../site.css">
+<style>
+  /* 1200×630으로 찍어 assets/og.png를 만듭니다: zsh dev/og.sh */
+  :root { color-scheme: light; }
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; background: #f2f3f8; color: #000; }
+  .og { position: relative; width: 1200px; height: 630px; display: flex; flex-direction: column; align-items: center; }
+  .brand-row { margin-top: 54px; display: flex; align-items: center; gap: 12px; font-size: 30px; font-weight: 800; letter-spacing: -0.02em; }
+  .brand-row .char { --size: 40px; }
+  h1 { margin-top: 14px; font-size: 92px; font-weight: 800; letter-spacing: -0.045em; line-height: 1.05; }
+  .og-crew { position: absolute; bottom: 30px; left: 0; right: 0; display: flex; justify-content: center; align-items: flex-end; gap: 34px; }
+  .floor { position: absolute; left: 0; right: 0; bottom: 0; height: 46px; }
+</style>
+</head>
+<body>
+<div class="og">
+  <div class="brand-row"><span class="char" data-char="moa" data-still></span>모아북</div>
+  <h1>사진이 제자리를 찾아요</h1>
+  <div class="og-crew">
+    <span class="char" data-char="rolly" data-size="154" data-still></span>
+    <span class="char" data-char="pola" data-size="182" data-still></span>
+    <span class="char" data-char="moa" data-mood="cheer" data-size="252" data-still></span>
+    <span class="char" data-char="chalkak" data-size="182" data-still></span>
+    <span class="char" data-char="nyang" data-size="154" data-still></span>
+  </div>
+  <div class="floor"></div>
+</div>
+<script type="module" src="../main.js"></script>
+</body>
+</html>

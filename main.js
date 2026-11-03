@@ -8,7 +8,7 @@ root.classList.add('js')
 
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)')
 const darkScheme = matchMedia('(prefers-color-scheme: dark)')
-const scheme = () => (darkScheme.matches ? 'dark' : 'light')
+const scheme = () => root.dataset.theme || (darkScheme.matches ? 'dark' : 'light')
 
 // 바깥 주소 ---------------------------------------------------------------
 
