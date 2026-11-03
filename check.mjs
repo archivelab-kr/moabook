@@ -137,15 +137,14 @@ check('상대 경로만 쓰고 모두 실제 파일', () => {
   }
 })
 
-check('외부 요청 없음(App Store · 문의 링크는 config.js에만)', () => {
+check('외부 요청 없음 · 바깥 링크는 App Store와 문의 설문만', () => {
+  const allowed = ['https://apps.apple.com/app/id6472587949', 'https://forms.gle/UtCTKWL9Msymuf639']
   for (const file of pages) {
     const html = readFileSync(file, 'utf8')
     assert.ok(!/<(script|link|img|iframe)[^>]+(src|href)="https?:/.test(html), relative(root, file))
-    assert.ok(!/apps\.apple\.com|forms\.gle/.test(html), `${relative(root, file)}: 바깥 주소는 config.js에만`)
+    for (const [, url] of html.matchAll(/<a[^>]+href="(https?:[^"]+)"/g)) assert.ok(allowed.includes(url), `${relative(root, file)}: ${url}`)
+    for (const [, kind, url] of html.matchAll(/data-link="(appstore|feedback)"[^>]*href="([^"]+)"/g)) assert.equal(url, allowed[kind === 'appstore' ? 0 : 1], relative(root, file))
   }
-  const config = readFileSync(join(root, 'config.js'), 'utf8')
-  assert.match(config, /apps\.apple\.com\/app\/id6472587949/)
-  assert.match(config, /forms\.gle\/UtCTKWL9Msymuf639/)
 })
 
 console.log(`\n${passed}개 통과`)

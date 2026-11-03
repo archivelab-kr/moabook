@@ -1,7 +1,6 @@
 // 캐릭터 그리기와 움직임. 세 페이지가 함께 씁니다.
 // 글과 버튼은 HTML에 있으므로 이 파일이 없어도 읽을 수 있고, 캐릭터만 빠집니다.
 import { MOODS, characterById, toSVG } from './characters.js'
-import { APP_STORE_URL, FEEDBACK_URL } from './config.js'
 
 const root = document.documentElement
 root.classList.add('js')
@@ -9,11 +8,6 @@ root.classList.add('js')
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)')
 const darkScheme = matchMedia('(prefers-color-scheme: dark)')
 const scheme = () => root.dataset.theme || (darkScheme.matches ? 'dark' : 'light')
-
-// 바깥 주소 ---------------------------------------------------------------
-
-for (const a of document.querySelectorAll('[data-link="appstore"]')) a.href = APP_STORE_URL
-for (const a of document.querySelectorAll('[data-link="feedback"]')) a.href = FEEDBACK_URL
 
 // 캐릭터 그리기 -------------------------------------------------------------
 
