@@ -1,6 +1,7 @@
 // 캐릭터 그리기와 움직임. 세 페이지가 함께 씁니다.
 // 글과 버튼은 HTML에 있으므로 이 파일이 없어도 읽을 수 있고, 캐릭터만 빠집니다.
 import { MOODS, characterById, toSVG } from './characters.js'
+import { sceneSVG } from './scenes.js'
 
 const root = document.documentElement
 root.classList.add('js')
@@ -40,7 +41,18 @@ export function setMood(el, mood, { asBase = false } = {}) {
 }
 
 document.querySelectorAll('.char[data-char]').forEach(mount)
-darkScheme.addEventListener('change', () => states.forEach((_, el) => draw(el)))
+
+// 픽셀 사진(널브러진 폴라로이드 · 기기 화면 사진). data-flat이면 틀 없이 사진만 그립니다.
+const snaps = [...document.querySelectorAll('.snap[data-scene]')]
+const drawSnaps = () => snaps.forEach(el => {
+  el.innerHTML = sceneSVG(el.dataset.scene, { scheme: scheme(), frame: el.dataset.flat === undefined })
+})
+drawSnaps()
+
+darkScheme.addEventListener('change', () => {
+  states.forEach((_, el) => draw(el))
+  drawSnaps()
+})
 
 // 깜빡임: 캐릭터마다 2~5초 무작위 간격, 120ms ---------------------------------
 

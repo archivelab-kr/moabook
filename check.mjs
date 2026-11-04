@@ -1,11 +1,12 @@
 // 사이트 확인: node check.mjs
-// 1) 캐릭터 그림이 앱 원본 규칙대로 옮겨졌는지
+// 1) 캐릭터 그림이 앱 원본 규칙대로 옮겨졌는지 · 픽셀 사진(scenes.js)이 칸 수와 색을 다 갖췄는지
 // 2) 모든 HTML의 상대 경로가 실제 파일을 가리키고, '/'로 시작하는 절대 경로가 없는지
 import assert from 'node:assert/strict'
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs'
 import { join, dirname, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { CHARACTERS, MOODS, applyFace, toSVG } from './characters.js'
+import { SCENES, SCENE_WIDTH, SCENE_HEIGHT, sceneSVG } from './scenes.js'
 
 const root = dirname(fileURLToPath(import.meta.url))
 let passed = 0
@@ -97,6 +98,32 @@ check('소품은 몸 밖으로 넘쳐 그림', () => {
   const svg = toSVG(moa, { accessories: ['partyHat'] })
   assert.match(svg, /viewBox="0 0 14 14"/)
   assert.match(svg, /y="-/)
+})
+
+// 픽셀 사진 ------------------------------------------------------------------
+
+check('픽셀 사진은 14×11칸, 모든 글자에 색', () => {
+  for (const [id, scene] of Object.entries(SCENES)) {
+    assert.equal(scene.rows.length, SCENE_HEIGHT, id)
+    for (const row of scene.rows) {
+      assert.equal(row.length, SCENE_WIDTH, id)
+      for (const ch of row) assert.ok(scene.palette[ch], `${id} '${ch}'`)
+    }
+  }
+})
+
+check('픽셀 사진 SVG 틀', () => {
+  for (const id of Object.keys(SCENES)) {
+    for (const scheme of ['light', 'dark']) {
+      const svg = sceneSVG(id, { scheme })
+      assert.match(svg, /viewBox="0 0 20 19"/, id)
+      assert.match(svg, /shape-rendering="crispEdges"/, id)
+      assert.ok(!svg.includes('undefined'), `${id} ${scheme}`)
+    }
+    assert.match(sceneSVG(id, { frame: false }), /viewBox="0 0 14 11"/, id)
+  }
+  assert.ok(!sceneSVG('sea').includes('#FFFFFF'), '라이트는 스티커 테두리 없음')
+  assert.ok(sceneSVG('sea', { scheme: 'dark' }).includes('#FFFFFF'), '다크는 스티커 테두리')
 })
 
 // 링크 ------------------------------------------------------------------

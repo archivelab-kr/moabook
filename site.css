@@ -499,19 +499,17 @@ a { color: var(--primary1); text-underline-offset: 0.2em; }
   width: 100%;
   margin-inline: auto;
 }
-.pile span:not(.char) {
+/* 픽셀 폴라로이드(main.js가 scenes.js로 그림). 20×19칸 틀이라 한 칸이 4px쯤 되게 너비를 잡습니다. */
+.pile .snap {
   position: absolute;
   left: var(--x);
   top: var(--y);
   width: var(--w);
-  aspect-ratio: 5 / 4;
-  background: var(--c);
-  border: 5px solid #fff;
-  border-bottom-width: 12px;
-  outline: 2px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  aspect-ratio: 20 / 19;
+  line-height: 0;
   transform: translate(-30%, 0) rotate(var(--r));
-  opacity: 0.92;
 }
+.snap svg { display: block; width: 100%; height: 100%; }
 .pile .char {
   position: absolute;
   left: 50%;
@@ -941,7 +939,7 @@ a { color: var(--primary1); text-underline-offset: 0.2em; }
 }
 
 .device-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
-.device-photos .ph { aspect-ratio: 1; min-height: 0; border-radius: 4px; }
+.device-photos .snap { aspect-ratio: 14 / 11; line-height: 0; border-radius: 2px; overflow: hidden; }
 .device-crew { display: flex; justify-content: center; align-items: flex-end; gap: 4px; }
 
 /* ======================================================================
@@ -990,5 +988,5 @@ a { color: var(--primary1); text-underline-offset: 0.2em; }
   :root:not([data-theme="light"]) .doc-page { --page: var(--bg); }
 }
 
-/* 자바스크립트가 꺼지면 캐릭터 자리와 캐릭터 안내를 비우지 않고 숨깁니다. */
-html:not(.js) .char, html:not(.js) .js-only { display: none; }
+/* 자바스크립트가 꺼지면 캐릭터 · 픽셀 사진 자리와 캐릭터 안내를 비우지 않고 숨깁니다. */
+html:not(.js) .char, html:not(.js) .snap, html:not(.js) .js-only { display: none; }
