@@ -75,7 +75,7 @@ for (const page of pages) {
       await send('Runtime.evaluate', { expression: 'window.scrollTo(0, 0)' })
       await sleep(Number(process.env.WAIT || 900))
       const { result } = await send('Runtime.evaluate', {
-        expression: 'JSON.stringify({h: document.documentElement.scrollHeight, sw: document.documentElement.scrollWidth, out: [...document.querySelectorAll("body *")].filter(e => { const r = e.getBoundingClientRect(); return r.width && r.right > innerWidth + 1 && !e.closest("[aria-hidden=true], .phone, .pile") }).map(e => e.tagName + "." + e.className).slice(0, 5)})',
+        expression: 'JSON.stringify({h: document.documentElement.scrollHeight, sw: document.documentElement.scrollWidth, out: [...document.querySelectorAll("body *")].filter(e => { const r = e.getBoundingClientRect(); return r.width && r.right > innerWidth + 1 && !e.closest("[aria-hidden=true], .phone, .pile, .extras-row") }).map(e => e.tagName + "." + e.className).slice(0, 5)})',
         returnByValue: true
       })
       const { h, sw, out: over } = JSON.parse(result.value)

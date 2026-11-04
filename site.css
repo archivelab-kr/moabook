@@ -619,6 +619,55 @@ a { color: var(--primary1); text-underline-offset: 0.2em; }
   .speaker .bubble { margin-top: 18px; }
 }
 
+/* 3-1. 더 할 수 있는 일 ------------------------------------------------------
+   작은 카드 세 장. 넓은 화면에서는 한 줄, 좁은 화면에서는 가로로 넘겨 봅니다(페이지는 옆으로 밀리지 않음). */
+
+.extras { --band: var(--bg); padding: 64px 0 72px; }
+.extras h2 { font-size: clamp(26px, 4.4vw, 38px); font-weight: 800; letter-spacing: -0.035em; margin-bottom: 28px; }
+.extras-row {
+  list-style: none;
+  margin: 0 auto;
+  padding: 8px 16px 20px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(80%, 300px);
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 16px;
+  overscroll-behavior-x: contain;
+}
+.extras-row:focus-visible { outline: 3px solid var(--primary1); outline-offset: -3px; }
+.extra {
+  --frame-fill: color-mix(in srgb, var(--theme) 9%, var(--box));
+  margin: var(--u);
+  padding: 30px 22px 24px;
+  scroll-snap-align: start;
+}
+.extra-scene { position: relative; padding: 6px 0 0; }
+.extra .phone { width: 176px; }
+.extra .phone img { border-width: 5px; border-radius: 28px; }
+.extra:nth-child(2) .phone { transform: rotate(2deg); }
+.extra-scene .char { position: absolute; right: 0; bottom: -2px; }
+.extra h3 { margin-top: 26px; font-size: 21px; font-weight: 800; line-height: 1.35; letter-spacing: -0.03em; text-wrap: balance; }
+.extra p { margin-top: 8px; font-size: 16px; color: var(--text-2); }
+
+@media (min-width: 820px) {
+  .extras { padding: 80px 0 96px; }
+  .extras-row {
+    width: var(--wrap);
+    padding: 8px 0 0;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-columns: auto;
+    gap: 28px;
+    overflow: visible;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .extra { --frame-fill: color-mix(in srgb, var(--theme) 14%, var(--box)); }
+}
+
 /* 4. 안심 ------------------------------------------------------------------ */
 
 .safe {
