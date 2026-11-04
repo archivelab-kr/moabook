@@ -164,13 +164,16 @@ check('상대 경로만 쓰고 모두 실제 파일', () => {
   }
 })
 
-check('외부 요청 없음 · 바깥 링크는 App Store와 문의 설문만', () => {
-  const allowed = ['https://apps.apple.com/app/id6472587949', 'https://forms.gle/UtCTKWL9Msymuf639']
+check('외부 요청 없음 · 바깥 링크는 App Store와 Firebase 개인정보 안내만, 문의는 메일', () => {
+  const appStore = 'https://apps.apple.com/app/id6472587949'
+  const mail = 'mailto:archivelabapps@gmail.com'
+  const allowed = [appStore, 'https://firebase.google.com/support/privacy']
   for (const file of pages) {
     const html = readFileSync(file, 'utf8')
     assert.ok(!/<(script|link|img|iframe)[^>]+(src|href)="https?:/.test(html), relative(root, file))
     for (const [, url] of html.matchAll(/<a[^>]+href="(https?:[^"]+)"/g)) assert.ok(allowed.includes(url), `${relative(root, file)}: ${url}`)
-    for (const [, kind, url] of html.matchAll(/data-link="(appstore|feedback)"[^>]*href="([^"]+)"/g)) assert.equal(url, allowed[kind === 'appstore' ? 0 : 1], relative(root, file))
+    for (const [, kind, url] of html.matchAll(/data-link="(appstore|mail)"[^>]*href="([^"]+)"/g)) assert.equal(url, kind === 'appstore' ? appStore : mail, relative(root, file))
+    assert.ok(!html.includes('forms.gle'), `${relative(root, file)}: 예전 문의 설문`)
   }
 })
 
