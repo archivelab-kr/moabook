@@ -564,6 +564,7 @@ a { color: var(--primary1); text-underline-offset: 0.2em; }
 .feature .problem { margin-top: 14px; color: var(--text-2); font-size: 18px; }
 /* 문제 → 해 주는 일: 대표 색 픽셀 화살표로 잇습니다 */
 .feature .answer { margin-top: 10px; font-size: 18px; font-weight: 500; }
+.feature .more { margin-top: 12px; font-size: 17px; color: var(--text-2); }
 .feature .answer::before {
   content: "";
   display: block;
@@ -776,161 +777,10 @@ a { color: var(--primary1); text-underline-offset: 0.2em; }
   .first-run { display: block; grid-column: 2; grid-row: 1 / span 4; width: 260px; transform: rotate(3deg); }
 }
 
-/* 앱 화면 그림 ------------------------------------------------------------
-   스크린샷 대신 CSS로 그린 화면입니다. 숫자 · 사진은 예시이고 실제 사진은 쓰지 않습니다. */
-
-.screen {
-  --s-bg: #f2f2f7;
-  --s-card: #ffffff;
-  --s-text: #000;
-  --s-text-2: rgba(60, 60, 67, 0.65);
-  --s-fill: rgba(120, 120, 128, 0.14);
-  width: 100%;
-  aspect-ratio: 1206 / 2622;
-  border-radius: 40px;
-  border: 7px solid #1d1e2b;
-  background: var(--s-bg);
-  color: var(--s-text);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--theme) 40%, transparent), 10px 12px 0 color-mix(in srgb, var(--theme) 28%, transparent);
-  overflow: hidden;
-  padding: 10px 14px 0;
-  font-size: 11px;
-  line-height: 1.35;
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-  position: relative;
-  text-align: left;
-}
+/* 다크에서는 스크린샷 테두리를 밝게 */
 @media (prefers-color-scheme: dark) {
-  .screen {
-    --s-bg: #000;
-    --s-card: #1c1c1e;
-    --s-text: #fff;
-    --s-text-2: rgba(235, 235, 245, 0.6);
-    --s-fill: rgba(120, 120, 128, 0.32);
-  }
-  .phone .screen, .phone img { border-color: #3a3a3c; }
+  .phone img { border-color: #3a3a3c; }
 }
-.screen small { display: block; font-size: 10px; font-weight: 500; color: var(--s-text-2); }
-.scr-bar { display: flex; justify-content: space-between; align-items: center; padding: 2px 8px 4px; font-size: 11px; }
-.scr-bar i { width: 20px; height: 9px; border-radius: 3px; border: 1.5px solid currentColor; opacity: 0.8; }
-.scr-title { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin-top: 4px; }
-.scr-title.small { font-size: 18px; }
-.scr-sub { font-size: 14px; font-weight: 800; margin-top: 4px; }
-.scr-note { font-size: 10px; color: var(--s-text-2); text-align: center; }
-.scr-card { background: var(--s-card); border-radius: 16px; padding: 10px; }
-.scr-btn {
-  display: block;
-  text-align: center;
-  background: var(--theme);
-  color: #fff;
-  font-weight: 700;
-  font-size: 12px;
-  border-radius: 999px;
-  padding: 7px 10px;
-  margin-top: 8px;
-}
-.scr-btn small { display: inline; color: rgba(255, 255, 255, 0.85); margin-left: 4px; }
-.scr-btn.full { margin-top: auto; margin-bottom: 26px; padding: 10px; font-size: 13px; }
-.scr-chip { margin-left: auto; font-size: 10px; font-weight: 700; color: var(--theme); background: color-mix(in srgb, var(--theme) 14%, transparent); padding: 4px 8px; border-radius: 999px; white-space: nowrap; }
-
-/* 예시 사진: 그라데이션 풍경 */
-.ph { display: block; border-radius: 8px; background: var(--g); min-height: 20px; }
-.ph.sq { width: 40px; height: 40px; flex: none; }
-.ph.sea { --g: linear-gradient(#a8dcff 0 48%, #3d9fe0 48% 74%, #f2d27a 74%); }
-.ph.sunset { --g: linear-gradient(#ffcf8a, #ff8fa8 55%, #7d7aff); }
-.ph.food { --g: radial-gradient(circle at 50% 56%, #fff 0 26%, #f28a3a 27% 36%, #ffe6c9 37%); }
-.ph.city { --g: linear-gradient(#cfe2ff 0 40%, transparent 40%), repeating-linear-gradient(90deg, #5e6ca8 0 9px, #8b96c9 9px 14px, #45507f 14px 22px); }
-.ph.field { --g: linear-gradient(#bfe3ff 0 52%, #8fd18f 52% 70%, #5fb36f 70%); }
-.ph.snow { --g: linear-gradient(#dfe8f5 0 50%, #ffffff 50%); }
-.ph.flower { --g: radial-gradient(circle at 30% 62%, #ff6b9a 0 7%, transparent 8%), radial-gradient(circle at 62% 70%, #ffc93c 0 6%, transparent 7%), radial-gradient(circle at 78% 58%, #ff7faa 0 5%, transparent 6%), linear-gradient(#bfe3ff 0 50%, #7cc77f 50%); }
-.ph.pet { --g: radial-gradient(circle at 50% 60%, #f2d27a 0 22%, transparent 23%), radial-gradient(circle at 36% 38%, #e0a060 0 9%, transparent 10%), radial-gradient(circle at 64% 38%, #e0a060 0 9%, transparent 10%), linear-gradient(#ffe8ef, #ffd9b8); }
-
-/* 여행 */
-.trip .big { height: 92px; position: relative; }
-.trip-name { position: absolute; left: 10px; bottom: 8px; color: #fff; font-weight: 800; font-size: 15px; text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35); }
-.trip-name small { color: rgba(255, 255, 255, 0.92); }
-.thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 6px; }
-.thumbs .ph { aspect-ratio: 1; min-height: 0; border-radius: 6px; }
-.trip .row { display: flex; align-items: center; gap: 10px; }
-.trip .t { font-weight: 700; font-size: 13px; }
-.stamp { margin-left: auto; width: 40px; height: 40px; border-radius: 50%; border: 2px dashed var(--theme); display: grid; place-items: center; background: color-mix(in srgb, var(--theme) 14%, transparent); }
-
-/* 넘겨 보며 정리 */
-.scr-nav { display: flex; align-items: center; justify-content: space-between; }
-.scr-nav .dot { width: 30px; height: 30px; border-radius: 50%; background: var(--s-card); display: grid; place-items: center; font-size: 12px; }
-.scr-nav .trash::before { content: ""; width: 10px; height: 11px; border: 2px solid currentColor; border-top-width: 3px; border-radius: 0 0 3px 3px; }
-.capsule { background: var(--s-card); border-radius: 999px; padding: 4px 14px; text-align: center; font-weight: 700; font-size: 12px; }
-.swipe-area { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: center; }
-.card-photo { flex: 1; margin: 22px 4px 4px; border-radius: 14px; transform: translateY(-18px) rotate(-3deg); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.14); }
-.hint { position: absolute; top: 2px; left: 50%; transform: translateX(-50%); z-index: 1; background: var(--primary2); color: #fff; font-weight: 700; padding: 3px 10px; border-radius: 999px; font-size: 10px; white-space: nowrap; }
-.hint::before { content: "↑ "; }
-.albums { display: flex; gap: 6px; }
-.albums span { background: var(--s-card); border-radius: 10px; padding: 7px 8px; font-weight: 600; font-size: 10px; white-space: nowrap; }
-.albums span:first-child { outline: 2px solid var(--theme); }
-.scr-tools { display: flex; justify-content: center; gap: 8px; padding-bottom: 6px; }
-.pill { background: var(--s-card); border-radius: 999px; padding: 8px 14px; font-weight: 700; font-size: 11px; }
-.pill.main { background: var(--primary1); color: #fff; }
-.remark { position: absolute; right: 8px; bottom: 12px; display: flex; align-items: flex-end; flex-direction: column; gap: 4px; }
-.mini-bubble { order: -1; background: var(--s-card); border: 2px solid var(--outline); padding: 4px 8px; font-size: 10px; font-weight: 700; box-shadow: 2px 2px 0 var(--outline); }
-
-/* 추억 카드 · 추천 앨범 */
-.polaroid { background: #fff; color: #000; padding: 8px 8px 0; transform: rotate(-3deg); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14); margin: 6px 8px 4px; }
-.polaroid .ph { height: 150px; border-radius: 2px; }
-.polaroid b { display: block; text-align: center; padding: 8px 0 10px; font-size: 13px; }
-.topics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-.topics span { background: var(--s-card); border-radius: 12px; padding: 6px; font-weight: 700; font-size: 11px; }
-.topics .ph { aspect-ratio: 1; min-height: 0; margin-bottom: 5px; }
-
-/* 동영상 줄이기 */
-.segments { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--s-fill); border-radius: 9px; padding: 2px; text-align: center; font-weight: 600; font-size: 10px; }
-.segments span { padding: 5px 0; border-radius: 7px; }
-.segments .on { background: var(--s-card); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
-.list { display: grid; gap: 8px; }
-.vid { display: flex; align-items: center; gap: 10px; }
-.vid .ph { position: relative; }
-.vid i { position: absolute; right: 3px; bottom: 2px; font-style: normal; font-size: 8px; color: #fff; font-weight: 700; }
-.vid .t { font-weight: 700; font-size: 13px; }
-.vid .t small { color: var(--theme); font-weight: 700; }
-.saving { text-align: center; }
-.saving b { font-size: 14px; }
-
-/* 출석 도장 */
-.week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; }
-.day { display: grid; justify-items: center; gap: 4px; }
-.day .char, .day i { width: 30px; height: 30px; border-radius: 50%; }
-.day.on .char { background: var(--c); padding: 2px; }
-.day i { border: 2px solid var(--s-fill); }
-.day.today i { border: 2px dashed var(--theme); }
-.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-.stats span { background: var(--s-card); border-radius: 12px; padding: 8px; font-size: 10px; color: var(--s-text-2); }
-.stats b { display: block; color: var(--s-text); font-size: 16px; }
-.dress { display: flex; align-items: center; gap: 12px; padding: 14px; }
-.props { display: flex; flex-wrap: wrap; gap: 5px; }
-.props span { background: color-mix(in srgb, var(--theme) 14%, transparent); color: var(--theme); border-radius: 999px; padding: 4px 8px; font-weight: 700; font-size: 10px; }
-.props span:first-child { background: var(--theme); color: #fff; }
-
-.scr-tabs {
-  margin: auto -6px 14px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  text-align: center;
-  background: color-mix(in srgb, var(--s-card) 88%, transparent);
-  border-radius: 999px;
-  padding: 7px 4px;
-  font-size: 9px;
-  font-weight: 600;
-  color: var(--s-text-2);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
-.scr-tabs span::before { content: ""; display: block; width: 14px; height: 14px; margin: 0 auto 3px; border-radius: 4px; background: currentColor; opacity: 0.5; }
-.scr-tabs .on { color: var(--primary1); }
-.scr-tabs .on::before { opacity: 1; }
-.cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; padding: 10px; }
-.cal span { aspect-ratio: 1; border-radius: 50%; border: 1.5px solid var(--s-fill); }
-.cal .on { background: var(--c); border-color: transparent; }
-.cal .today { border: 1.5px dashed var(--theme); }
 .finale .store { justify-self: center; }
 @media (prefers-color-scheme: dark) {
   /* 노랑을 검정에 섞으면 탁해져서 다크에서는 회색 바탕에 노란 테두리만 둡니다. */
