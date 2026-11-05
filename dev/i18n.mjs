@@ -15,6 +15,7 @@ const source = langs[0]
 const BLOCK = /\n[ \t]*<!-- i18n:(head|langs) -->[\s\S]*?<!-- \/i18n:\1 -->/g
 
 const problems = []
+const used = new Set()
 const changed = []
 const writes = []
 
@@ -32,6 +33,7 @@ function translate(html, lang, page) {
   for (const row of rows) {
     const to = row[lang.code]
     if (to === undefined) { problems.push(`${lang.code}: 번역 없음 → ${row.ko.slice(0, 40)}`); continue }
+    if (html.includes(row.ko)) used.add(row.ko)
     html = html.split(row.ko).join(to)
   }
   html = html
@@ -82,6 +84,8 @@ for (const page of PAGES) {
   }
 }
 
+// 한국어 문구를 바꾸고 표를 고치지 않으면 옛 줄이 남아 번역이 빠집니다(한국어가 남음 검사와 함께 잡음).
+for (const row of rows) if (!used.has(row.ko)) problems.push(`쓰이지 않는 줄(한국어 원문에서 사라짐) → ${row.ko.slice(0, 40)}`)
 if (problems.length) {
   console.error(problems.join('\n'))
   process.exit(1)
