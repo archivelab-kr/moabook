@@ -23,6 +23,7 @@
 node check.mjs          # 캐릭터 규칙 · 링크 · 언어 페이지가 최신이고 구조가 같은지 검사
 node dev/i18n.mjs       # 한국어 페이지로 언어 페이지를 다시 만들기
 zsh dev/shots.sh <폴더>  # 세 페이지를 360 · 390 · 1280 폭, 라이트 · 다크로 찍기(SEG=2000이면 나눠 찍음)
+zsh dev/store-frames.sh <앱 화면 폴더> <저장 폴더> [언어]  # App Store 스크린샷(문구 + 앱 화면, 1320×2868)
 zsh dev/og.sh           # dev/og.html로 assets/og.png(공유 이미지) 다시 만들기
 python3 -m http.server  # 로컬에서 열기(ES 모듈이라 file://로는 캐릭터가 안 보임)
 ```
