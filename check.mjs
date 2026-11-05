@@ -1,10 +1,12 @@
 // 사이트 확인: node check.mjs
 // 1) 캐릭터 그림이 앱 원본 규칙대로 옮겨졌는지 · 픽셀 사진(scenes.js)이 칸 수와 색을 다 갖췄는지
-// 2) 모든 HTML의 상대 경로가 실제 파일을 가리키고, '/'로 시작하는 절대 경로가 없는지
+// 2) 언어 페이지가 한국어 원문과 dev/i18n.json에서 만든 그대로인지(구조가 같음)
+// 3) 모든 HTML의 상대 경로가 실제 파일을 가리키고, '/'로 시작하는 절대 경로가 없는지
 import assert from 'node:assert/strict'
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs'
 import { join, dirname, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { spawnSync } from 'node:child_process'
 import { CHARACTERS, MOODS, applyFace, toSVG } from './characters.js'
 import { SCENES, SCENE_WIDTH, SCENE_HEIGHT, sceneSVG } from './scenes.js'
 
@@ -139,9 +141,26 @@ function htmlFiles(dir) {
 
 const pages = htmlFiles(root)
 
-check('세 페이지가 있음', () => {
+const { langs } = JSON.parse(readFileSync(join(root, 'dev/i18n.json'), 'utf8'))
+
+check('언어마다 세 페이지가 있음', () => {
+  for (const lang of langs) {
+    for (const p of ['index.html', 'privacy/index.html', 'support/index.html']) {
+      assert.ok(existsSync(join(root, lang.dir, p)), join(lang.dir, p))
+    }
+  }
+})
+
+check('언어 페이지가 최신(node dev/i18n.mjs)', () => {
+  const run = spawnSync(process.execPath, [join(root, 'dev/i18n.mjs'), '--check'], { encoding: 'utf8' })
+  assert.equal(run.status, 0, run.stderr)
+})
+
+check('언어 페이지는 한국어 원문과 구조가 같음', () => {
+  const tags = html => ['<section', '<article', '<img', '<a ', '<h2', '<h3', '<details', '<li'].map(tag => html.split(tag).length)
   for (const p of ['index.html', 'privacy/index.html', 'support/index.html']) {
-    assert.ok(existsSync(join(root, p)), p)
+    const source = tags(readFileSync(join(root, p), 'utf8'))
+    for (const lang of langs.slice(1)) assert.deepEqual(tags(readFileSync(join(root, lang.dir, p), 'utf8')), source, join(lang.dir, p))
   }
 })
 
@@ -170,7 +189,8 @@ check('외부 요청 없음 · 바깥 링크는 App Store와 Firebase 개인정�
   const allowed = [appStore, 'https://firebase.google.com/support/privacy']
   for (const file of pages) {
     const html = readFileSync(file, 'utf8')
-    assert.ok(!/<(script|link|img|iframe)[^>]+(src|href)="https?:/.test(html), relative(root, file))
+    const fetches = html.replace(/<link rel="alternate"[^>]+>/g, '') // hreflang 링크는 요청하지 않음
+    assert.ok(!/<(script|link|img|iframe)[^>]+(src|href)="https?:/.test(fetches), relative(root, file))
     for (const [, url] of html.matchAll(/<a[^>]+href="(https?:[^"]+)"/g)) assert.ok(allowed.includes(url), `${relative(root, file)}: ${url}`)
     for (const [, kind, url] of html.matchAll(/data-link="(appstore|mail)"[^>]*href="([^"]+)"/g)) assert.equal(url, kind === 'appstore' ? appStore : mail, relative(root, file))
     assert.ok(!html.includes('forms.gle'), `${relative(root, file)}: 예전 문의 설문`)

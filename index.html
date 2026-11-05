@@ -20,6 +20,14 @@
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="site.css">
 <script type="module" src="main.js"></script>
+<!-- i18n:head -->
+<link rel="alternate" hreflang="ko" href="https://archivelab-kr.github.io/moabook/">
+<link rel="alternate" hreflang="en" href="https://archivelab-kr.github.io/moabook/en/">
+<link rel="alternate" hreflang="ja" href="https://archivelab-kr.github.io/moabook/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://archivelab-kr.github.io/moabook/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://archivelab-kr.github.io/moabook/zh-hant/">
+<link rel="alternate" hreflang="x-default" href="https://archivelab-kr.github.io/moabook/en/">
+<!-- /i18n:head -->
 </head>
 <body class="home">
 <a class="skip" href="#main">본문으로 건너뛰기</a>
@@ -219,7 +227,7 @@
         <h2 id="safe-title">사진은 이 기기 안에서만 살펴봐요</h2>
         <ul class="facts">
           <li>여행 찾기, 비슷한 사진 찾기, 주제 나누기는 모두 iPhone 안에서 해요. 사진을 서버로 보내지 않아요. 장소 이름을 찾을 때만 위치 좌표를 Apple 지도에 보내요.</li>
-          <li>사용자를 추적하지 않고, 방문 통계도 모으지 않아요.</li>
+          <li>사용자를 추적하지 않고, 이 웹사이트도 방문 통계를 모으지 않아요.</li>
           <li>휴지통에 넣은 사진은 직접 비우기 전에는 지워지지 않아요. 비운 뒤에도 사진 앱 '최근 삭제된 항목'에 30일 동안 남아요.</li>
         </ul>
         <p class="safe-link"><a href="privacy/">개인정보 처리방침 보기</a></p>
@@ -235,11 +243,11 @@
       <div class="pick-stage">
         <p class="bubble pick-bubble" data-pick-bubble aria-live="polite"><span class="who">모아</span><span data-pick-line>안녕하세요! 저는 모아예요. 책장 넘기는 소리 좋죠?</span></p>
         <div class="pick-row" role="group" aria-label="함께할 친구 고르기">
-          <button class="char-btn pick" type="button" data-pick="moa" style="--theme: var(--moa)" aria-pressed="true" data-line="안녕하세요! 저는 모아예요. 책장 넘기는 소리 좋죠?"><span class="char" data-char="moa" data-acc="partyHat" data-size="98"></span><span class="pick-name">모아</span></button>
-          <button class="char-btn pick" type="button" data-pick="chalkak" style="--theme: var(--chalkak)" aria-pressed="false" data-line="찰칵! 저는 찰칵이에요. 웃어 봐요, 찍을게요!"><span class="char" data-char="chalkak" data-acc="flower" data-size="98"></span><span class="pick-name">찰칵</span></button>
-          <button class="char-btn pick" type="button" data-pick="pola" style="--theme: var(--pola)" aria-pressed="false" data-line="안녕하세요, 저는 폴라예요. 찍자마자 짠! 나와요."><span class="char" data-char="pola" data-acc="strawHat" data-size="98"></span><span class="pick-name">폴라</span></button>
-          <button class="char-btn pick" type="button" data-pick="rolly" style="--theme: var(--rolly)" aria-pressed="false" data-line="저는 롤리예요! 필름 냄새 좋아요."><span class="char" data-char="rolly" data-acc="crown" data-size="98"></span><span class="pick-name">롤리</span></button>
-          <button class="char-btn pick" type="button" data-pick="nyang" style="--theme: var(--nyang)" aria-pressed="false" data-line="야옹~ 저는 냥이예요. 꾹꾹이 해 줄까요?"><span class="char" data-char="nyang" data-acc="ribbon" data-size="98"></span><span class="pick-name">냥이</span></button>
+          <button class="char-btn pick" type="button" data-pick="moa" style="--theme: var(--moa)" aria-pressed="true" data-cta="모아랑 정리 시작하기" data-line="안녕하세요! 저는 모아예요. 책장 넘기는 소리 좋죠?"><span class="char" data-char="moa" data-acc="partyHat" data-size="98"></span><span class="pick-name">모아</span></button>
+          <button class="char-btn pick" type="button" data-pick="chalkak" style="--theme: var(--chalkak)" aria-pressed="false" data-cta="찰칵이랑 정리 시작하기" data-line="찰칵! 저는 찰칵이에요. 웃어 봐요, 찍을게요!"><span class="char" data-char="chalkak" data-acc="flower" data-size="98"></span><span class="pick-name">찰칵</span></button>
+          <button class="char-btn pick" type="button" data-pick="pola" style="--theme: var(--pola)" aria-pressed="false" data-cta="폴라랑 정리 시작하기" data-line="안녕하세요, 저는 폴라예요. 찍자마자 짠! 나와요."><span class="char" data-char="pola" data-acc="strawHat" data-size="98"></span><span class="pick-name">폴라</span></button>
+          <button class="char-btn pick" type="button" data-pick="rolly" style="--theme: var(--rolly)" aria-pressed="false" data-cta="롤리랑 정리 시작하기" data-line="저는 롤리예요! 필름 냄새 좋아요."><span class="char" data-char="rolly" data-acc="crown" data-size="98"></span><span class="pick-name">롤리</span></button>
+          <button class="char-btn pick" type="button" data-pick="nyang" style="--theme: var(--nyang)" aria-pressed="false" data-cta="냥이랑 정리 시작하기" data-line="야옹~ 저는 냥이예요. 꾹꾹이 해 줄까요?"><span class="char" data-char="nyang" data-acc="ribbon" data-size="98"></span><span class="pick-name">냥이</span></button>
         </div>
         <div class="floor" aria-hidden="true"></div>
       </div>
@@ -257,6 +265,15 @@
       <a href="privacy/">개인정보 처리방침</a>
       <a href="support/">지원</a>
     </nav>
+    <!-- i18n:langs -->
+    <nav class="langs" aria-label="언어">
+      <a href="./" hreflang="ko" lang="ko" aria-current="true">한국어</a>
+      <a href="en/" hreflang="en" lang="en">English</a>
+      <a href="ja/" hreflang="ja" lang="ja">日本語</a>
+      <a href="zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+      <a href="zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    </nav>
+    <!-- /i18n:langs -->
     <p>© 2026 모아북</p>
   </div>
 </footer>

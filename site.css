@@ -32,6 +32,15 @@
   --wrap: min(1080px, 100% - 32px);
 }
 
+/* 한중일 글꼴은 언어마다 그 나라 글자 모양으로(한국어 글꼴로 한자 · 가나를 그리지 않게).
+   일본어 · 중국어는 띄어쓰기가 없어 낱말 단위 줄바꿈(keep-all)을 풀고 금칙 처리를 따릅니다. */
+:root:lang(ja) { --font: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Meiryo, system-ui, sans-serif; }
+:root:lang(zh-Hans) { --font: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; }
+:root:lang(zh-Hant) { --font: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif; }
+:lang(ja) body, :lang(zh) body { word-break: normal; line-break: strict; }
+/* 제목은 되는 브라우저에서 구절 단위로 끊음(Chrome 119+, 나머지는 위 규칙) */
+:lang(ja) :is(h1, h2, h3), :lang(zh) :is(h1, h2, h3) { word-break: auto-phrase; }
+
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #000000;
@@ -381,6 +390,9 @@ a { color: var(--primary1); text-underline-offset: 0.2em; }
 .site-foot a { color: var(--text-2); text-decoration: none; font-weight: 600; }
 .site-foot a:hover { color: var(--text); text-decoration: underline; }
 .site-foot .marks { display: flex; align-items: flex-end; gap: 6px; }
+.site-foot .langs { flex-basis: 100%; gap: 4px 16px; font-size: 13px; }
+.site-foot .langs a { font-weight: 500; }
+.site-foot .langs a[aria-current] { color: var(--text); }
 .site-foot .marks .char { --size: 28px; }
 
 /* 둥근 카드 ---------------------------------------------------------------- */
@@ -775,6 +787,7 @@ a { color: var(--primary1); text-underline-offset: 0.2em; }
 }
 .pick .char { --k: 0.56; transition: transform 0.2s steps(3, end); }
 .pick-name {
+  white-space: nowrap;
   font-size: 14px;
   font-weight: 700;
   color: var(--text-2);
@@ -782,6 +795,8 @@ a { color: var(--primary1); text-underline-offset: 0.2em; }
   border-radius: 999px;
 }
 .pick[aria-pressed="true"] .char { transform: translateY(-8px); }
+/* 가타카나 이름(ローリー 등)은 한글 두 글자보다 길어 360 폭에서 끝 이름이 잘리지 않게 줄임 */
+:lang(ja) .pick-name { font-size: 13px; padding: 3px 7px; }
 .pick[aria-pressed="true"] .pick-name { background: var(--theme); color: #fff; }
 .pick-stage .floor { margin-top: -4px; }
 @media (min-width: 380px) { .pick .char { --k: 0.62; } }

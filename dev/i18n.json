@@ -1,0 +1,1015 @@
+{
+ "_": "웹사이트 다국어. 한국어 페이지가 원문이고, dev/i18n.mjs가 rows를 위에서부터 차례로 바꿔(긴 문장 먼저, 이름 같은 짧은 낱말은 끝에) 언어 폴더에 씁니다. 언어를 더하려면 langs에 한 줄, rows마다 그 언어 값을 더합니다.",
+ "langs": [
+  {
+   "code": "ko",
+   "dir": "",
+   "og": "ko_KR",
+   "label": "한국어",
+   "langsLabel": "언어"
+  },
+  {
+   "code": "en",
+   "dir": "en",
+   "og": "en_US",
+   "label": "English",
+   "langsLabel": "Language"
+  },
+  {
+   "code": "ja",
+   "dir": "ja",
+   "og": "ja_JP",
+   "label": "日本語",
+   "langsLabel": "言語"
+  },
+  {
+   "code": "zh-Hans",
+   "dir": "zh-hans",
+   "og": "zh_CN",
+   "label": "简体中文",
+   "langsLabel": "语言"
+  },
+  {
+   "code": "zh-Hant",
+   "dir": "zh-hant",
+   "og": "zh_TW",
+   "label": "繁體中文",
+   "langsLabel": "語言"
+  }
+ ],
+ "rows": [
+  {
+   "ko": "모아북: 사진 정리, 모아랑 같이 해요",
+   "en": "MoaBook: Clean Up Photos with Moa",
+   "ja": "MoaBook：モアといっしょに写真を整理",
+   "zh-Hans": "MoaBook：和 Moa 一起整理照片",
+   "zh-Hant": "MoaBook：和 Moa 一起整理照片"
+  },
+  {
+   "ko": "여행 사진은 여행별 앨범으로 묶고, 여러 장 비슷하게 찍은 사진은 한 장만 남겨요. iPhone 사진 정리 앱 모아북이에요.",
+   "en": "Group trip photos into an album for each trip, and keep just one of your similar shots. MoaBook is a photo cleanup app for iPhone.",
+   "ja": "旅行の写真は旅行ごとのアルバムにまとめ、似たように何枚も撮った写真は1枚だけ残します。iPhoneの写真整理アプリ、MoaBookです。",
+   "zh-Hans": "把旅行照片按旅行整理成相簿，相似的多张照片只留一张。MoaBook 是一款 iPhone 照片整理 App。",
+   "zh-Hant": "把旅行照片按旅行整理成相簿，相似的多張照片只留一張。MoaBook 是一款 iPhone 照片整理 App。"
+  },
+  {
+   "ko": "여행 사진은 여행별 앨범으로 묶고, 여러 장 비슷하게 찍은 사진은 한 장만 남겨요.",
+   "en": "Group trip photos into an album for each trip, and keep just one of your similar shots.",
+   "ja": "旅行の写真は旅行ごとのアルバムにまとめ、似たように何枚も撮った写真は1枚だけ残します。",
+   "zh-Hans": "把旅行照片按旅行整理成相簿，相似的多张照片只留一张。",
+   "zh-Hant": "把旅行照片按旅行整理成相簿，相似的多張照片只留一張。"
+  },
+  {
+   "ko": "개인정보 처리방침: 모아북",
+   "en": "Privacy Policy: MoaBook",
+   "ja": "プライバシーポリシー：MoaBook",
+   "zh-Hans": "隐私政策：MoaBook",
+   "zh-Hant": "隱私權政策：MoaBook"
+  },
+  {
+   "ko": "지원: 모아북",
+   "en": "Support: MoaBook",
+   "ja": "サポート：MoaBook",
+   "zh-Hans": "支持：MoaBook",
+   "zh-Hant": "支援：MoaBook"
+  },
+  {
+   "ko": "모아북 자주 묻는 질문과 문의. 사진이 지워지는지, 휴지통에서 되살리기, 구매 복원, 기기 변경을 알려 드려요.",
+   "en": "MoaBook FAQ and contact: whether photos get deleted, restoring from the Trash, restoring purchases, and switching devices.",
+   "ja": "MoaBookのよくある質問とお問い合わせ。写真が削除されるか、ゴミ箱からの復元、購入の復元、機種変更についてご案内します。",
+   "zh-Hans": "MoaBook 常见问题与联系方式：照片会不会被删除、从废纸篓恢复、恢复购买、更换设备。",
+   "zh-Hant": "MoaBook 常見問題與聯絡方式：照片會不會被刪除、從垃圾桶復原、恢復購買、更換裝置。"
+  },
+  {
+   "ko": "모아북은 사진을 기기 안에서만 살펴보고 서버로 보내지 않아요. 사용자를 추적하지 않아요.",
+   "en": "MoaBook looks at your photos only on your device and never sends them to a server. It doesn't track you.",
+   "ja": "MoaBookは写真をデバイスの中だけで見て、サーバに送りません。ユーザーを追跡しません。",
+   "zh-Hans": "MoaBook 只在设备上查看你的照片，不会发送到服务器，也不会追踪你。",
+   "zh-Hant": "MoaBook 只在裝置上查看你的照片，不會傳送到伺服器，也不會追蹤你。"
+  },
+  {
+   "ko": "본문으로 건너뛰기",
+   "en": "Skip to content",
+   "ja": "本文へスキップ",
+   "zh-Hans": "跳到正文",
+   "zh-Hant": "跳到正文"
+  },
+  {
+   "ko": "aria-label=\"사이트\"",
+   "en": "aria-label=\"Site\"",
+   "ja": "aria-label=\"サイト\"",
+   "zh-Hans": "aria-label=\"网站\"",
+   "zh-Hant": "aria-label=\"網站\""
+  },
+  {
+   "ko": "aria-label=\"바닥글\"",
+   "en": "aria-label=\"Footer\"",
+   "ja": "aria-label=\"フッター\"",
+   "zh-Hans": "aria-label=\"页脚\"",
+   "zh-Hant": "aria-label=\"頁尾\""
+  },
+  {
+   "ko": "개인정보 처리방침 보기",
+   "en": "Read the Privacy Policy",
+   "ja": "プライバシーポリシーを見る",
+   "zh-Hans": "查看隐私政策",
+   "zh-Hant": "查看隱私權政策"
+  },
+  {
+   "ko": ">개인정보 처리방침<",
+   "en": ">Privacy Policy<",
+   "ja": ">プライバシーポリシー<",
+   "zh-Hans": ">隐私政策<",
+   "zh-Hant": ">隱私權政策<"
+  },
+  {
+   "ko": ">소개<",
+   "en": ">About<",
+   "ja": ">紹介<",
+   "zh-Hans": ">介绍<",
+   "zh-Hant": ">介紹<"
+  },
+  {
+   "ko": ">지원<",
+   "en": ">Support<",
+   "ja": ">サポート<",
+   "zh-Hans": ">支持<",
+   "zh-Hant": ">支援<"
+  },
+  {
+   "ko": "사진 정리, <br class=\"narrow\">모아랑 같이 해요",
+   "en": "Clean up photos <br class=\"narrow\">with Moa",
+   "ja": "写真の整理、<br class=\"narrow\">モアといっしょに",
+   "zh-Hans": "和 Moa <br class=\"narrow\">一起整理照片",
+   "zh-Hant": "和 Moa <br class=\"narrow\">一起整理照片"
+  },
+  {
+   "ko": "App Store에서 받기",
+   "en": "Download on the App Store",
+   "ja": "App Storeからダウンロード",
+   "zh-Hans": "在 App Store 下载",
+   "zh-Hant": "在 App Store 下載"
+  },
+  {
+   "ko": "aria-label=\"모아북 친구들\"",
+   "en": "aria-label=\"MoaBook friends\"",
+   "ja": "aria-label=\"MoaBookの仲間たち\"",
+   "zh-Hans": "aria-label=\"MoaBook 的朋友们\"",
+   "zh-Hant": "aria-label=\"MoaBook 的朋友們\""
+  },
+  {
+   "ko": "안녕하세요! 오늘은 어떤 사진부터 정리할까요?",
+   "en": "Hi! Which photos shall we start with today?",
+   "ja": "こんにちは！今日はどの写真から整理しましょうか？",
+   "zh-Hans": "你好！今天先整理哪些照片呢？",
+   "zh-Hant": "你好！今天先整理哪些照片呢？"
+  },
+  {
+   "ko": "aria-label=\"모아 표정 바꾸기\"",
+   "en": "aria-label=\"Change Moa's face\"",
+   "ja": "aria-label=\"モアの表情を変える\"",
+   "zh-Hans": "aria-label=\"切换 Moa 的表情\"",
+   "zh-Hant": "aria-label=\"切換 Moa 的表情\""
+  },
+  {
+   "ko": "aria-label=\"찰칵 표정 바꾸기\"",
+   "en": "aria-label=\"Change Snap's face\"",
+   "ja": "aria-label=\"カシャの表情を変える\"",
+   "zh-Hans": "aria-label=\"切换咔嚓的表情\"",
+   "zh-Hant": "aria-label=\"切換咔嚓的表情\""
+  },
+  {
+   "ko": "aria-label=\"폴라 표정 바꾸기\"",
+   "en": "aria-label=\"Change Pola's face\"",
+   "ja": "aria-label=\"ポラの表情を変える\"",
+   "zh-Hans": "aria-label=\"切换 Pola 的表情\"",
+   "zh-Hant": "aria-label=\"切換 Pola 的表情\""
+  },
+  {
+   "ko": "aria-label=\"롤리 표정 바꾸기\"",
+   "en": "aria-label=\"Change Rolly's face\"",
+   "ja": "aria-label=\"ローリーの表情を変える\"",
+   "zh-Hans": "aria-label=\"切换 Rolly 的表情\"",
+   "zh-Hant": "aria-label=\"切換 Rolly 的表情\""
+  },
+  {
+   "ko": "aria-label=\"냥이 표정 바꾸기\"",
+   "en": "aria-label=\"Change Kitty's face\"",
+   "ja": "aria-label=\"ニャンの表情を変える\"",
+   "zh-Hans": "aria-label=\"切换喵喵的表情\"",
+   "zh-Hant": "aria-label=\"切換喵喵的表情\""
+  },
+  {
+   "ko": "사진 정리, 오늘 같이 해 볼까요?",
+   "en": "Shall we clean up photos together today?",
+   "ja": "今日はいっしょに写真を整理してみませんか？",
+   "zh-Hans": "今天一起整理照片吧？",
+   "zh-Hant": "今天一起整理照片吧？"
+  },
+  {
+   "ko": "사진은 계속 쌓이는데, 막상 정리하려면 어디부터 손대야 할지 막막하죠.",
+   "en": "Photos keep piling up, and when you finally sit down to sort them, it's hard to know where to start.",
+   "ja": "写真はどんどん増えるのに、いざ整理しようとするとどこから手をつければいいか迷いますよね。",
+   "zh-Hans": "照片越积越多，真要整理时却不知道从哪里下手。",
+   "zh-Hant": "照片越積越多，真要整理時卻不知道從哪裡下手。"
+  },
+  {
+   "ko": "최근 여행 하나부터 시작해요. 비슷한 사진만 골라서 보여 드릴게요.",
+   "en": "Start with one recent trip. We'll show you just the similar photos.",
+   "ja": "最近の旅行ひとつから始めましょう。似ている写真だけを選んでお見せします。",
+   "zh-Hans": "从最近的一次旅行开始吧。只挑出相似的照片给你看。",
+   "zh-Hant": "從最近的一次旅行開始吧。只挑出相似的照片給你看。"
+  },
+  {
+   "ko": "모아북으로 할 수 있는 일",
+   "en": "What You Can Do with MoaBook",
+   "ja": "MoaBookでできること",
+   "zh-Hans": "用 MoaBook 可以做的事",
+   "zh-Hant": "用 MoaBook 可以做的事"
+  },
+  {
+   "ko": "모아북 여행 탭: 지도에 다녀온 여행이 표시되고, 아래 목록에 부산 · 강릉 · 서귀포 여행이 앨범과 함께 있어요",
+   "en": "MoaBook Trips tab: your trips on a map, with each trip and its album in the list below",
+   "ja": "MoaBookの旅行タブ：出かけた旅行が地図に表示され、下のリストに旅行がアルバムといっしょに並んでいます",
+   "zh-Hans": "MoaBook 旅行标签页：地图上标出去过的旅行，下方列表里有各次旅行和相簿",
+   "zh-Hant": "MoaBook 旅行標籤頁：地圖上標出去過的旅行，下方列表裡有各次旅行和相簿"
+  },
+  {
+   "ko": "여행마다 앨범을 만들어 봐요",
+   "en": "Let's make an album for each trip",
+   "ja": "旅行ごとにアルバムを作ってみましょう",
+   "zh-Hans": "为每次旅行建一个相簿吧",
+   "zh-Hant": "為每次旅行建一個相簿吧"
+  },
+  {
+   "ko": "여행별로 앨범을 만들어요",
+   "en": "An Album for Every Trip",
+   "ja": "旅行ごとにアルバムを作ります",
+   "zh-Hans": "按旅行创建相簿",
+   "zh-Hant": "按旅行建立相簿"
+  },
+  {
+   "ko": "여행 사진이 일상 사진, 캡처 사이에 섞여 있어요.",
+   "en": "Trip photos get mixed in with everyday shots and screenshots.",
+   "ja": "旅行の写真が、日常の写真やスクリーンショットに混ざっています。",
+   "zh-Hans": "旅行照片混在日常照片和截屏之间。",
+   "zh-Hant": "旅行照片混在日常照片和截圖之間。"
+  },
+  {
+   "ko": "찍은 날짜와 장소로 다녀온 여행을 찾고, 버튼 한 번으로 여행마다 앨범을 만들어요. 찾은 여행은 지도와 목록에서 다시 볼 수 있어요.",
+   "en": "MoaBook finds your trips from when and where your photos were taken, and makes an album for each trip with one tap. You can revisit them on the map and in the list.",
+   "ja": "撮影した日付と場所から出かけた旅行を見つけ、ボタンひとつで旅行ごとにアルバムを作ります。見つけた旅行は地図とリストで見直せます。",
+   "zh-Hans": "根据拍摄日期和地点找出你去过的旅行，一键为每次旅行创建相簿。找到的旅行可以在地图和列表中回看。",
+   "zh-Hant": "根據拍攝日期和地點找出你去過的旅行，一鍵為每次旅行建立相簿。找到的旅行可以在地圖和列表中回顧。"
+  },
+  {
+   "ko": "여행 다듬기 화면: 부산 여행의 비슷한 사진 세 묶음 중 첫 묶음에서 남길 사진 한 장을 골랐어요",
+   "en": "Touch Up a Trip: in the first of three groups of similar photos, one photo is picked to keep",
+   "ja": "旅行を仕上げる画面：似ている写真3グループのうち、最初のグループで残す写真を1枚選んでいます",
+   "zh-Hans": "完善旅行画面：在三组相似照片中，第一组已选好要保留的一张",
+   "zh-Hant": "完善旅行畫面：在三組相似照片中，第一組已選好要保留的一張"
+  },
+  {
+   "ko": "비슷한 사진은 한 장만 골라 봐요",
+   "en": "Pick just one of your similar photos",
+   "ja": "似ている写真は1枚だけ選んでみましょう",
+   "zh-Hans": "相似的照片只挑一张吧",
+   "zh-Hant": "相似的照片只挑一張吧"
+  },
+  {
+   "ko": "비슷한 사진은 한 장만 남겨요",
+   "en": "Keep Just One of Similar Shots",
+   "ja": "似ている写真は1枚だけ残します",
+   "zh-Hans": "相似照片只留一张",
+   "zh-Hant": "相似照片只留一張"
+  },
+  {
+   "ko": "같은 장면을 여러 장 찍어 두면 앨범이 금세 길어져요.",
+   "en": "Taking several shots of the same scene makes albums long fast.",
+   "ja": "同じ場面を何枚も撮ると、アルバムがすぐ長くなります。",
+   "zh-Hans": "同一个场景拍好几张，相簿很快就变得很长。",
+   "zh-Hant": "同一個場景拍好幾張，相簿很快就變得很長。"
+  },
+  {
+   "ko": "여행 안에서 연달아 찍은 사진과 비슷한 사진을 묶어 보여 줘요. 남길 사진만 고르면 나머지는 휴지통에 넣어요.",
+   "en": "Rapid shots and similar photos within a trip are shown in groups. Pick the ones to keep, and the rest go to the Trash.",
+   "ja": "旅行の中の連続ショットや似ている写真をグループにして見せます。残す写真を選ぶだけで、残りはゴミ箱に入ります。",
+   "zh-Hans": "把旅行中的连拍照片和相似照片分组展示。挑好要保留的，其余的放进废纸篓。",
+   "zh-Hant": "把旅行中的連拍照片和相似照片分組顯示。挑好要保留的，其餘的放進垃圾桶。"
+  },
+  {
+   "ko": "넘겨 보며 정리 화면: 음식 사진 한 장과 오른쪽 보관 버튼, 아래에 여행 · 바다 · 카페 · 꽃 · 음식 · 반려동물 앨범이 있어요",
+   "en": "Swipe to Sort: one photo with the Keep button on the right, and album slots below",
+   "ja": "スワイプで整理の画面：写真1枚と右の残すボタン、下にアルバムの欄があります",
+   "zh-Hans": "滑动整理画面：一张照片和右侧的保留按钮，下方有相簿栏",
+   "zh-Hant": "滑動整理畫面：一張照片和右側的保留按鈕，下方有相簿欄"
+  },
+  {
+   "ko": "넘기면서 하나씩 정해요",
+   "en": "Decide one by one as you swipe",
+   "ja": "スワイプしながら1枚ずつ決めます",
+   "zh-Hans": "边滑边一张张决定",
+   "zh-Hant": "邊滑邊一張張決定"
+  },
+  {
+   "ko": "넘기면서 정리해요",
+   "en": "Sort as You Swipe",
+   "ja": "スワイプで整理します",
+   "zh-Hans": "滑动就能整理",
+   "zh-Hant": "滑動就能整理"
+  },
+  {
+   "ko": "한 장씩 열어 지우고 앨범에 넣으려면 손이 많이 가요.",
+   "en": "Opening each photo to delete it or add it to an album takes a lot of taps.",
+   "ja": "1枚ずつ開いて削除したりアルバムに入れたりするのは手間がかかります。",
+   "zh-Hans": "一张张打开再删除或加入相簿，太费工夫了。",
+   "zh-Hant": "一張張打開再刪除或加入相簿，太費工夫了。"
+  },
+  {
+   "ko": "사진을 넘기다 위로 밀면 휴지통, ✓를 누르면 보관, 아래 앨범 칸에 넣으면 그 앨범으로 들어가요. 잘못 넘겨도 되돌리기로 바로 돌아와요.",
+   "en": "As you swipe, push a photo up to send it to the Trash, tap ✓ to keep it, or drop it on an album below to add it there. Swiped the wrong way? Undo brings it right back.",
+   "ja": "写真をめくりながら、上にスワイプするとゴミ箱、✓をタップすると残す、下のアルバムに入れるとそのアルバムに入ります。間違えても「取り消す」ですぐ戻せます。",
+   "zh-Hans": "滑动浏览时，往上推放进废纸篓，点按 ✓ 保留，放到下方相簿栏就加入该相簿。滑错了也能马上撤销。",
+   "zh-Hant": "滑動瀏覽時，往上推放進垃圾桶，點一下 ✓ 保留，放到下方相簿欄就加入該相簿。滑錯了也能馬上還原。"
+  },
+  {
+   "ko": "동영상 용량 줄이기 화면: 동영상 5개를 고화질로 줄이면 약 106.7MB~180.6MB가 줄어든다고 보여 줘요",
+   "en": "Shrink Videos: shows how much space shrinking the videos will save",
+   "ja": "動画の容量を減らす画面：動画を減らすとどれだけ空くかを表示しています",
+   "zh-Hans": "压缩视频画面：显示压缩视频后能省下多少空间",
+   "zh-Hant": "壓縮影片畫面：顯示壓縮影片後能省下多少空間"
+  },
+  {
+   "ko": "동영상은 지우지 말고 줄여 봐요",
+   "en": "Shrink videos instead of deleting them",
+   "ja": "動画は削除せずに容量を減らしてみましょう",
+   "zh-Hans": "视频别删，压缩一下吧",
+   "zh-Hant": "影片別刪，壓縮一下吧"
+  },
+  {
+   "ko": "지우지 않고 공간을 비워요",
+   "en": "Free Up Space Without Deleting",
+   "ja": "削除せずに空き容量を増やします",
+   "zh-Hans": "不删除也能腾出空间",
+   "zh-Hant": "不刪除也能騰出空間"
+  },
+  {
+   "ko": "저장 공간은 모자란데, 동영상은 지우기 아까워요.",
+   "en": "You're low on storage, but you don't want to delete your videos.",
+   "ja": "ストレージは足りないのに、動画は消したくありません。",
+   "zh-Hans": "存储空间不够，视频又舍不得删。",
+   "zh-Hant": "儲存空間不夠，影片又捨不得刪。"
+  },
+  {
+   "ko": "동영상마다 화질을 골라 크기를 줄이고, 라이브 포토는 정지 사진으로 바꿔요. 얼마나 줄어드는지 먼저 보여 줘요.",
+   "en": "Choose a quality for each video to make it smaller, and convert Live Photos to stills. You'll see how much you'll save first.",
+   "ja": "動画ごとに画質を選んでサイズを減らし、Live Photosは静止画に変換します。どれだけ減るかを先に表示します。",
+   "zh-Hans": "为每个视频选择画质来压缩，实况照片转为静态照片。会先显示能省多少。",
+   "zh-Hant": "為每個影片選擇畫質來壓縮，原況照片轉為靜態照片。會先顯示能省多少。"
+  },
+  {
+   "ko": "캐릭터 탭: 사진 더미가 놓인 픽셀 방에서 모아가 &#39;하늘이 참 높아요&#39;라고 말해요. 아래에 친구 고르기와 앱 아이콘, 옷장이 있어요",
+   "en": "Characters tab: Moa talks in a pixel room with piles of photos. Below are friend picking, the app icon, and the wardrobe",
+   "ja": "キャラクタータブ：写真の山があるピクセルの部屋でモアが話しています。下に仲間選び、アプリアイコン、クローゼットがあります",
+   "zh-Hans": "角色标签页：Moa 在堆着照片的像素房间里说话。下方有选择朋友、App 图标和衣橱",
+   "zh-Hant": "角色標籤頁：Moa 在堆著照片的像素房間裡說話。下方有選擇朋友、App 圖示和衣櫥"
+  },
+  {
+   "ko": "저를 누르면 한마디 해요",
+   "en": "Tap me and I'll say something",
+   "ja": "わたしをタップするとひと言話します",
+   "zh-Hans": "点我一下，我会说句话",
+   "zh-Hant": "點我一下，我會說句話"
+  },
+  {
+   "ko": "정리할수록 친구 방이 깨끗해져요",
+   "en": "The More You Sort, the Tidier the Room",
+   "ja": "整理するほど仲間の部屋がきれいになります",
+   "zh-Hans": "越整理，朋友的房间越干净",
+   "zh-Hant": "越整理，朋友的房間越乾淨"
+  },
+  {
+   "ko": "사진은 한 번 정리해도 금세 또 쌓여요.",
+   "en": "Even after you clean up, photos pile up again quickly.",
+   "ja": "写真は一度整理しても、すぐにまた増えます。",
+   "zh-Hans": "照片就算整理过一次，很快又会堆起来。",
+   "zh-Hant": "照片就算整理過一次，很快又會堆起來。"
+  },
+  {
+   "ko": "캐릭터 탭에는 고른 친구가 사는 픽셀 방이 있어요. 정리하지 않은 사진이 많으면 방이 어질러져 있고, 정리할수록 친구가 방을 치워요.",
+   "en": "The Characters tab has a pixel room where your chosen friend lives. With lots of unsorted photos the room is messy, and the more you sort, the more your friend tidies up.",
+   "ja": "キャラクタータブには、選んだ仲間が住むピクセルの部屋があります。整理していない写真が多いと部屋は散らかっていて、整理するほど仲間が部屋を片づけます。",
+   "zh-Hans": "角色标签页里有你选的朋友住的像素房间。未整理的照片多，房间就乱糟糟的；越整理，朋友就越会收拾房间。",
+   "zh-Hant": "角色標籤頁裡有你選的朋友住的像素房間。未整理的照片多，房間就亂糟糟的；越整理，朋友就越會收拾房間。"
+  },
+  {
+   "ko": "친구를 누르면 121가지 말 가운데 지금 시간, 계절, 정리 기록에 맞는 한마디를 해요. 정리 도전을 이루면 소품을 받아 옷장에서 끼울 수 있고, 앱 아이콘도 고른 친구로 바꿀 수 있어요.",
+   "en": "Tap your friend to hear one of 121 lines that fits the time, the season, and your cleanup record. Complete challenges to earn items to wear from the wardrobe, and change the app icon to your chosen friend.",
+   "ja": "仲間をタップすると、121種類のセリフの中から今の時間・季節・整理の記録に合ったひと言を話します。チャレンジを達成するとアイテムがもらえてクローゼットで着けられ、アプリアイコンも選んだ仲間に変えられます。",
+   "zh-Hans": "点按朋友，它会从 121 句话中挑一句符合当前时间、季节和整理记录的话。完成挑战就能获得道具在衣橱里戴上，App 图标也能换成你选的朋友。",
+   "zh-Hant": "點一下朋友，它會從 121 句話中挑一句符合現在時間、季節和整理紀錄的話。完成挑戰就能獲得道具在衣櫥裡戴上，App 圖示也能換成你選的朋友。"
+  },
+  {
+   "ko": "이것도 할 수 있어요",
+   "en": "More You Can Do",
+   "ja": "こんなこともできます",
+   "zh-Hans": "还可以这样用",
+   "zh-Hant": "還可以這樣用"
+  },
+  {
+   "ko": "aria-label=\"더 할 수 있는 일 세 가지\"",
+   "en": "aria-label=\"Three more things you can do\"",
+   "ja": "aria-label=\"ほかにできること3つ\"",
+   "zh-Hans": "aria-label=\"另外三件可以做的事\"",
+   "zh-Hant": "aria-label=\"另外三件可以做的事\""
+  },
+  {
+   "ko": "정리 탭 &#39;바로 정리&#39;: 연달아 찍은 사진 5장, 중복된 항목 4장, 동영상 용량 줄이기 5개, 오래된 스크린샷 3장, 다 쓴 캡처 칸이 있어요",
+   "en": "Quick Clean-up on the Clean Up tab: Rapid Shots, Duplicates, Shrink Videos, Old Screenshots, and One-time Screenshots",
+   "ja": "整理タブの「おまかせ整理」：連続ショット、重複項目、動画の容量を減らす、古いスクリーンショット、使い終わったスクショの欄があります",
+   "zh-Hans": "整理标签页“一键整理”：连拍照片、重复项目、压缩视频、旧截屏和用过的截屏栏",
+   "zh-Hant": "整理標籤頁「一鍵整理」：連拍照片、重複項目、壓縮影片、舊截圖和用過的截圖欄"
+  },
+  {
+   "ko": "정리 탭 '바로 정리': 연달아 찍은 사진 5장, 중복된 항목 4장, 동영상 용량 줄이기 5개, 오래된 스크린샷 3장, 다 쓴 캡처 칸이 있어요",
+   "en": "Quick Clean-up on the Clean Up tab: Rapid Shots, Duplicates, Shrink Videos, Old Screenshots, and One-time Screenshots",
+   "ja": "整理タブの「おまかせ整理」：連続ショット、重複項目、動画の容量を減らす、古いスクリーンショット、使い終わったスクショの欄があります",
+   "zh-Hans": "整理标签页“一键整理”：连拍照片、重复项目、压缩视频、旧截屏和用过的截屏栏",
+   "zh-Hant": "整理標籤頁「一鍵整理」：連拍照片、重複項目、壓縮影片、舊截圖和用過的截圖欄"
+  },
+  {
+   "ko": "스크린샷과 중복 사진을 정리해요",
+   "en": "Clean Up Screenshots and Duplicates",
+   "ja": "スクリーンショットと重複写真を整理",
+   "zh-Hans": "整理截屏和重复照片",
+   "zh-Hant": "整理截圖和重複照片"
+  },
+  {
+   "ko": "스크린샷, 인증번호 같은 다 쓴 캡처, 중복 사진, 문서 · 영수증, 라이브 포토, 큰 동영상을 종류별로 모아 보여 줘요.",
+   "en": "Screenshots, one-time screenshots like verification codes, duplicates, documents and receipts, Live Photos, and large videos are gathered by type.",
+   "ja": "スクリーンショット、認証コードのような使い終わったスクショ、重複写真、書類・レシート、Live Photos、大きな動画を種類別にまとめて見せます。",
+   "zh-Hans": "把截屏、验证码之类用过的截屏、重复照片、文稿和收据、实况照片、大视频按类型集中展示。",
+   "zh-Hant": "把截圖、驗證碼之類用過的截圖、重複照片、文件和收據、原況照片、大影片按類型集中顯示。"
+  },
+  {
+   "ko": "월별로 보기: 2026년 달마다 남은 사진 수와 '이대로 보관' 버튼이 있고, 다 정리한 9월과 7월에는 완료 도장이 있어요",
+   "en": "By Month: each month shows photos left and a Keep As Is button, and fully sorted months have a done stamp",
+   "ja": "月別：月ごとに残りの写真の数と「このまま残す」ボタンがあり、整理し終えた月には完了スタンプがあります",
+   "zh-Hans": "按月：每个月显示剩余照片数和“保持原样”按钮，整理完的月份盖有完成章",
+   "zh-Hant": "按月：每個月顯示剩餘照片數和「保持原樣」按鈕，整理完的月份蓋有完成章"
+  },
+  {
+   "ko": "월별로 보기: 2026년 달마다 남은 사진 수와 &#39;이대로 보관&#39; 버튼이 있고, 다 정리한 9월과 7월에는 완료 도장이 있어요",
+   "en": "By Month: each month shows photos left and a Keep As Is button, and fully sorted months have a done stamp",
+   "ja": "月別：月ごとに残りの写真の数と「このまま残す」ボタンがあり、整理し終えた月には完了スタンプがあります",
+   "zh-Hans": "按月：每个月显示剩余照片数和“保持原样”按钮，整理完的月份盖有完成章",
+   "zh-Hant": "按月：每個月顯示剩餘照片數和「保持原樣」按鈕，整理完的月份蓋有完成章"
+  },
+  {
+   "ko": "한 달씩 끝내요",
+   "en": "Finish One Month at a Time",
+   "ja": "1か月ずつ終わらせます",
+   "zh-Hans": "一个月一个月地完成",
+   "zh-Hant": "一個月一個月地完成"
+  },
+  {
+   "ko": "달마다 남은 사진을 넘겨 보며 정리하거나, '이대로 보관'으로 그 달을 한 번에 끝내요. 다 끝낸 달에는 완료 도장이 찍혀요.",
+   "en": "Swipe through each month's remaining photos, or finish the whole month at once with Keep As Is. Finished months get a done stamp.",
+   "ja": "月ごとに残りの写真をスワイプで整理するか、「このまま残す」でその月をまとめて終わらせます。終わった月には完了スタンプが押されます。",
+   "zh-Hans": "逐月滑动整理剩余照片，或用“保持原样”一次完成整个月。完成的月份会盖上完成章。",
+   "zh-Hant": "逐月滑動整理剩餘照片，或用「保持原樣」一次完成整個月。完成的月份會蓋上完成章。"
+  },
+  {
+   "ko": "여행 공유 화면: '26 가을, 부산' 카드에 날짜, 사진 30장, 여행 사진 네 장이 담겨 있고 아래에 공유하기 버튼이 있어요",
+   "en": "Share Trip: a trip card with the dates, photo count, and four trip photos, with a Share button below",
+   "ja": "旅行を共有する画面：日付・写真の枚数・旅行の写真4枚が入ったカードと、その下の共有ボタン",
+   "zh-Hans": "共享旅行画面：包含日期、照片数和四张旅行照片的卡片，下方有分享按钮",
+   "zh-Hant": "分享旅行畫面：包含日期、照片數和四張旅行照片的卡片，下方有分享按鈕"
+  },
+  {
+   "ko": "여행 공유 화면: &#39;26 가을, 부산&#39; 카드에 날짜, 사진 30장, 여행 사진 네 장이 담겨 있고 아래에 공유하기 버튼이 있어요",
+   "en": "Share Trip: a trip card with the dates, photo count, and four trip photos, with a Share button below",
+   "ja": "旅行を共有する画面：日付・写真の枚数・旅行の写真4枚が入ったカードと、その下の共有ボタン",
+   "zh-Hans": "共享旅行画面：包含日期、照片数和四张旅行照片的卡片，下方有分享按钮",
+   "zh-Hant": "分享旅行畫面：包含日期、照片數和四張旅行照片的卡片，下方有分享按鈕"
+  },
+  {
+   "ko": "여행을 카드로 보내요",
+   "en": "Send a Trip as a Card",
+   "ja": "旅行をカードで送ります",
+   "zh-Hans": "把旅行做成卡片分享",
+   "zh-Hant": "把旅行做成卡片分享"
+  },
+  {
+   "ko": "다녀온 여행을 지도와 날짜별로 다시 보고, 여행 이름 · 날짜 · 사진을 담은 공유 카드를 만들어 보내요.",
+   "en": "Revisit your trips on the map and by date, and send a share card with the trip name, dates, and photos.",
+   "ja": "出かけた旅行を地図と日付ごとに見直し、旅行名・日付・写真を入れた共有カードを作って送れます。",
+   "zh-Hans": "按地图和日期回看去过的旅行，制作包含旅行名称、日期和照片的分享卡片发送出去。",
+   "zh-Hant": "按地圖和日期回顧去過的旅行，製作包含旅行名稱、日期和照片的分享卡片傳送出去。"
+  },
+  {
+   "ko": "사진은 이 기기 안에서만 살펴봐요",
+   "en": "Your Photos Stay on This Device",
+   "ja": "写真はこのデバイスの中だけで見ます",
+   "zh-Hans": "照片只在这台设备上分析",
+   "zh-Hant": "照片只在這台裝置上分析"
+  },
+  {
+   "ko": "여행 찾기, 비슷한 사진 찾기, 주제 나누기는 모두 iPhone 안에서 해요. 사진을 서버로 보내지 않아요. 장소 이름을 찾을 때만 위치 좌표를 Apple 지도에 보내요.",
+   "en": "Finding trips, finding similar photos, and sorting by topic all happen on your iPhone. Photos are never sent to a server. Location coordinates go to Apple Maps only to look up place names.",
+   "ja": "旅行探し、似ている写真探し、テーマ分けはすべてiPhoneの中で行います。写真をサーバに送りません。場所の名前を調べるときだけ、位置の座標をAppleのマップに送ります。",
+   "zh-Hans": "查找旅行、查找相似照片、按主题分类都在 iPhone 上完成。不会把照片发送到服务器。只有查找地名时才会把位置坐标发送给 Apple 地图。",
+   "zh-Hant": "查找旅行、查找相似照片、按主題分類都在 iPhone 上完成。不會把照片傳送到伺服器。只有查找地名時才會把位置座標傳送給 Apple 地圖。"
+  },
+  {
+   "ko": "사용자를 추적하지 않고, 이 웹사이트도 방문 통계를 모으지 않아요.",
+   "en": "MoaBook doesn't track you, and this website doesn't collect visit stats.",
+   "ja": "ユーザーを追跡せず、このウェブサイトもアクセス解析をしません。",
+   "zh-Hans": "不会追踪你，本网站也不收集访问统计。",
+   "zh-Hant": "不會追蹤你，本網站也不收集瀏覽統計。"
+  },
+  {
+   "ko": "휴지통에 넣은 사진은 직접 비우기 전에는 지워지지 않아요. 비운 뒤에도 사진 앱 '최근 삭제된 항목'에 30일 동안 남아요.",
+   "en": "Photos in the Trash aren't deleted until you empty it yourself. Even then, they stay in Recently Deleted in Photos for 30 days.",
+   "ja": "ゴミ箱に入れた写真は、自分で空にするまで削除されません。空にした後も写真アプリの「最近削除した項目」に30日間残ります。",
+   "zh-Hans": "放进废纸篓的照片在你亲自清空前不会删除。清空后也会在“照片”的“最近删除”中保留 30 天。",
+   "zh-Hant": "放進垃圾桶的照片在你親自清空前不會刪除。清空後也會在「照片」的「最近刪除」中保留 30 天。"
+  },
+  {
+   "ko": "어떤 친구랑 정리할래요?",
+   "en": "Who Do You Want to Sort With?",
+   "ja": "どの仲間と整理しますか？",
+   "zh-Hans": "想和哪个朋友一起整理？",
+   "zh-Hant": "想和哪個朋友一起整理？"
+  },
+  {
+   "ko": "처음 열면 함께할 친구를 골라요. 캐릭터 탭에서 언제든 바꿀 수 있어요.",
+   "en": "When you first open the app, you pick a friend. You can change anytime on the Characters tab.",
+   "ja": "最初に開いたときに、いっしょに整理する仲間を選びます。キャラクタータブでいつでも変えられます。",
+   "zh-Hans": "第一次打开时选一个朋友陪你。随时可在角色标签页更换。",
+   "zh-Hant": "第一次打開時選一個朋友陪你。隨時可在角色標籤頁更換。"
+  },
+  {
+   "ko": "aria-label=\"함께할 친구 고르기\"",
+   "en": "aria-label=\"Pick a friend\"",
+   "ja": "aria-label=\"いっしょに整理する仲間を選ぶ\"",
+   "zh-Hans": "aria-label=\"选择陪你的朋友\"",
+   "zh-Hant": "aria-label=\"選擇陪你的朋友\""
+  },
+  {
+   "ko": "안녕하세요! 저는 모아예요. 책장 넘기는 소리 좋죠?",
+   "en": "Hi! I'm Moa. Love the sound of turning pages?",
+   "ja": "こんにちは！わたしはモアです。ページをめくる音、いいでしょう？",
+   "zh-Hans": "你好！我是 Moa。翻页的声音很好听吧？",
+   "zh-Hant": "你好！我是 Moa。翻頁的聲音很好聽吧？"
+  },
+  {
+   "ko": "찰칵! 저는 찰칵이에요. 웃어 봐요, 찍을게요!",
+   "en": "Snap! I'm Snap. Say cheese, I'm taking one!",
+   "ja": "カシャ！わたしはカシャです。笑って、撮りますよ！",
+   "zh-Hans": "咔嚓！我是咔嚓。笑一个，我要拍啦！",
+   "zh-Hant": "咔嚓！我是咔嚓。笑一個，我要拍啦！"
+  },
+  {
+   "ko": "안녕하세요, 저는 폴라예요. 찍자마자 짠! 나와요.",
+   "en": "Hi, I'm Pola. Ta-da! It comes out right away.",
+   "ja": "こんにちは、わたしはポラです。撮ったらすぐにジャーン！と出てきます。",
+   "zh-Hans": "你好，我是 Pola。一拍完就当当！出来了。",
+   "zh-Hant": "你好，我是 Pola。一拍完就噹噹！出來了。"
+  },
+  {
+   "ko": "저는 롤리예요! 필름 냄새 좋아요.",
+   "en": "I'm Rolly! I love the smell of film.",
+   "ja": "わたしはローリーです！フィルムのにおいが好きです。",
+   "zh-Hans": "我是 Rolly！我喜欢胶卷的味道。",
+   "zh-Hant": "我是 Rolly！我喜歡底片的味道。"
+  },
+  {
+   "ko": "야옹~ 저는 냥이예요. 꾹꾹이 해 줄까요?",
+   "en": "Meow~ I'm Kitty. Want some kneading?",
+   "ja": "ニャー～ わたしはニャンです。ふみふみしてあげましょうか？",
+   "zh-Hans": "喵～我是喵喵。要我帮你踩踩奶吗？",
+   "zh-Hant": "喵～我是喵喵。要我幫你踩踩奶嗎？"
+  },
+  {
+   "ko": "data-cta=\"모아랑 정리 시작하기\"",
+   "en": "data-cta=\"Start Sorting with Moa\"",
+   "ja": "data-cta=\"モアと整理を始める\"",
+   "zh-Hans": "data-cta=\"和 Moa 开始整理\"",
+   "zh-Hant": "data-cta=\"和 Moa 開始整理\""
+  },
+  {
+   "ko": "data-cta=\"찰칵이랑 정리 시작하기\"",
+   "en": "data-cta=\"Start Sorting with Snap\"",
+   "ja": "data-cta=\"カシャと整理を始める\"",
+   "zh-Hans": "data-cta=\"和咔嚓开始整理\"",
+   "zh-Hant": "data-cta=\"和咔嚓開始整理\""
+  },
+  {
+   "ko": "data-cta=\"폴라랑 정리 시작하기\"",
+   "en": "data-cta=\"Start Sorting with Pola\"",
+   "ja": "data-cta=\"ポラと整理を始める\"",
+   "zh-Hans": "data-cta=\"和 Pola 开始整理\"",
+   "zh-Hant": "data-cta=\"和 Pola 開始整理\""
+  },
+  {
+   "ko": "data-cta=\"롤리랑 정리 시작하기\"",
+   "en": "data-cta=\"Start Sorting with Rolly\"",
+   "ja": "data-cta=\"ローリーと整理を始める\"",
+   "zh-Hans": "data-cta=\"和 Rolly 开始整理\"",
+   "zh-Hant": "data-cta=\"和 Rolly 開始整理\""
+  },
+  {
+   "ko": "data-cta=\"냥이랑 정리 시작하기\"",
+   "en": "data-cta=\"Start Sorting with Kitty\"",
+   "ja": "data-cta=\"ニャンと整理を始める\"",
+   "zh-Hans": "data-cta=\"和喵喵开始整理\"",
+   "zh-Hant": "data-cta=\"和喵喵開始整理\""
+  },
+  {
+   "ko": "모아랑 정리 시작하기",
+   "en": "Start Sorting with Moa",
+   "ja": "モアと整理を始める",
+   "zh-Hans": "和 Moa 开始整理",
+   "zh-Hant": "和 Moa 開始整理"
+  },
+  {
+   "ko": "모아북 첫 화면: 픽셀 방에서 모아가 기다리고 있어요",
+   "en": "MoaBook first screen: Moa waiting in a pixel room",
+   "ja": "MoaBookの最初の画面：ピクセルの部屋でモアが待っています",
+   "zh-Hans": "MoaBook 第一个画面：Moa 在像素房间里等你",
+   "zh-Hant": "MoaBook 第一個畫面：Moa 在像素房間裡等你"
+  },
+  {
+   "ko": "처음 열면 모아가 방에서 기다리고 있어요",
+   "en": "When you first open it, Moa is waiting in the room",
+   "ja": "最初に開くと、モアが部屋で待っています",
+   "zh-Hans": "第一次打开时，Moa 在房间里等你",
+   "zh-Hant": "第一次打開時，Moa 在房間裡等你"
+  },
+  {
+   "ko": "시행일 2026년 11월 5일",
+   "en": "Effective November 5, 2026",
+   "ja": "施行日 2026年11月5日",
+   "zh-Hans": "生效日期 2026年11月5日",
+   "zh-Hant": "生效日期 2026年11月5日"
+  },
+  {
+   "ko": "한 줄로 말하면, 사진은 이 기기 안에서만 살펴보고 어디에도 보내지 않아요.",
+   "en": "In short: your photos are looked at only on this device and are never sent anywhere.",
+   "ja": "ひと言でいうと、写真はこのデバイスの中だけで見て、どこにも送りません。",
+   "zh-Hans": "一句话：照片只在这台设备上查看，不会发送到任何地方。",
+   "zh-Hant": "一句話：照片只在這台裝置上查看，不會傳送到任何地方。"
+  },
+  {
+   "ko": "<h2>사진과 동영상</h2>",
+   "en": "<h2>Photos and Videos</h2>",
+   "ja": "<h2>写真と動画</h2>",
+   "zh-Hans": "<h2>照片和视频</h2>",
+   "zh-Hant": "<h2>照片和影片</h2>"
+  },
+  {
+   "ko": "여행 찾기, 비슷한 사진 찾기, 주제 나누기 같은 분석은 모두 iPhone 안에서 해요. 사진과 동영상을 모아북 서버나 다른 곳으로 보내지 않아요.",
+   "en": "Analysis such as finding trips, finding similar photos, and sorting by topic all happens on your iPhone. Photos and videos are never sent to a MoaBook server or anywhere else.",
+   "ja": "旅行探し、似ている写真探し、テーマ分けといった分析はすべてiPhoneの中で行います。写真と動画をMoaBookのサーバやほかの場所に送りません。",
+   "zh-Hans": "查找旅行、查找相似照片、按主题分类等分析都在 iPhone 上完成。不会把照片和视频发送到 MoaBook 服务器或其他地方。",
+   "zh-Hant": "查找旅行、查找相似照片、按主題分類等分析都在 iPhone 上完成。不會把照片和影片傳送到 MoaBook 伺服器或其他地方。"
+  },
+  {
+   "ko": "정리한 결과(앨범, 즐겨찾기, 지운 사진)는 사진 앱에 그대로 남아요.",
+   "en": "The results of your cleanup (albums, favorites, deleted photos) stay in the Photos app.",
+   "ja": "整理の結果（アルバム、お気に入り、削除した写真）は写真アプリにそのまま残ります。",
+   "zh-Hans": "整理的结果（相簿、个人收藏、删除的照片）都保留在“照片”App 中。",
+   "zh-Hant": "整理的結果（相簿、喜好項目、刪除的照片）都保留在「照片」App 中。"
+  },
+  {
+   "ko": "<h2>장소 이름</h2>",
+   "en": "<h2>Place Names</h2>",
+   "ja": "<h2>場所の名前</h2>",
+   "zh-Hans": "<h2>地名</h2>",
+   "zh-Hant": "<h2>地名</h2>"
+  },
+  {
+   "ko": "추억 카드, 여행, 사진 정보에서 장소 이름을 찾거나 장소를 검색할 때만 위치 좌표와 검색어를 Apple 지도 서비스에 보내요. 사진 자체는 보내지 않아요.",
+   "en": "Location coordinates and search terms are sent to Apple Maps only to look up place names for Moment Cards, trips, and photo info, or when you search for a place. The photos themselves are never sent.",
+   "ja": "思い出カード・旅行・写真の情報で場所の名前を調べるときや場所を検索するときだけ、位置の座標と検索語をAppleのマップのサービスに送ります。写真そのものは送りません。",
+   "zh-Hans": "只有在为时光卡片、旅行、照片信息查找地名或搜索地点时，才会把位置坐标和搜索词发送给 Apple 地图服务。不会发送照片本身。",
+   "zh-Hant": "只有在為時光卡片、旅行、照片資訊查找地名或搜尋地點時，才會把位置座標和搜尋字詞傳送給 Apple 地圖服務。不會傳送照片本身。"
+  },
+  {
+   "ko": "<h2>앱 오류 기록과 사용 기록</h2>",
+   "en": "<h2>Crash and Usage Data</h2>",
+   "ja": "<h2>アプリのエラー記録と利用記録</h2>",
+   "zh-Hans": "<h2>App 错误记录和使用记录</h2>",
+   "zh-Hant": "<h2>App 錯誤紀錄和使用紀錄</h2>"
+  },
+  {
+   "ko": "앱이 꺼지거나 오류가 나면 고치기 위해, 그리고 어떤 기능이 잘 쓰이는지 알기 위해 Google의 Firebase(Crashlytics, Analytics)로 아래 정보를 보내요.",
+   "en": "To fix crashes and errors, and to learn which features get used, the app sends the following to Google's Firebase (Crashlytics, Analytics).",
+   "ja": "アプリが落ちたりエラーが起きたりしたときに直すため、そしてどの機能がよく使われているかを知るため、GoogleのFirebase（Crashlytics、Analytics）に次の情報を送ります。",
+   "zh-Hans": "为了修复闪退和错误，以及了解哪些功能常被使用，App 会把以下信息发送到 Google 的 Firebase（Crashlytics、Analytics）。",
+   "zh-Hant": "為了修復閃退和錯誤，以及了解哪些功能常被使用，App 會把以下資訊傳送到 Google 的 Firebase（Crashlytics、Analytics）。"
+  },
+  {
+   "ko": "오류 기록: 꺼지거나 오류가 난 코드 위치, 오류 종류, 그때 보던 화면, 앱 · iOS 버전, 기기 모델",
+   "en": "Error records: where in the code a crash or error happened, the error type, the screen you were on, app and iOS versions, and device model",
+   "ja": "エラー記録：落ちたりエラーが起きたりしたコードの位置、エラーの種類、そのとき見ていた画面、アプリ・iOSのバージョン、デバイスのモデル",
+   "zh-Hans": "错误记录：闪退或出错的代码位置、错误类型、当时所在的画面、App 和 iOS 版本、设备型号",
+   "zh-Hant": "錯誤紀錄：閃退或出錯的程式碼位置、錯誤類型、當時所在的畫面、App 和 iOS 版本、裝置型號"
+  },
+  {
+   "ko": "사용 기록: 어떤 화면과 기능을 썼는지, 정리한 사진 수 같은 숫자",
+   "en": "Usage records: which screens and features you used, and numbers like how many photos you sorted",
+   "ja": "利用記録：どの画面と機能を使ったか、整理した写真の数などの数字",
+   "zh-Hans": "使用记录：用过哪些画面和功能，以及整理的照片数等数字",
+   "zh-Hant": "使用紀錄：用過哪些畫面和功能，以及整理的照片數等數字"
+  },
+  {
+   "ko": "앱 상태: 사진 권한, 사진 수 · 남은 공간의 대략적인 구간, 고른 캐릭터",
+   "en": "App state: photo access, rough ranges of photo count and free space, and your chosen character",
+   "ja": "アプリの状態：写真へのアクセス権、写真の数・空き容量のおおよその範囲、選んだキャラクター",
+   "zh-Hans": "App 状态：照片权限、照片数和剩余空间的大致区间、所选角色",
+   "zh-Hant": "App 狀態：照片權限、照片數和剩餘空間的大致區間、所選角色"
+  },
+  {
+   "ko": "식별자: 앱을 설치할 때 만드는 무작위 번호(Firebase 설치 ID, 문의 번호). 앱을 지우면 새로 만들어져요.",
+   "en": "Identifiers: random numbers created when you install the app (Firebase installation ID, support ID). New ones are created if you delete and reinstall the app.",
+   "ja": "識別子：アプリをインストールしたときに作るランダムな番号（FirebaseのインストールID、問い合わせ番号）。アプリを削除すると新しく作られます。",
+   "zh-Hans": "标识符：安装 App 时生成的随机编号（Firebase 安装 ID、咨询编号）。删除 App 后会重新生成。",
+   "zh-Hant": "識別碼：安裝 App 時產生的隨機編號（Firebase 安裝 ID、詢問編號）。刪除 App 後會重新產生。"
+  },
+  {
+   "ko": "사진, 동영상, 앨범 이름, 장소, 이름이나 연락처는 보내지 않아요. 보낸 정보는 Firebase의 보관 기간에 따라 지워져요(",
+   "en": "Photos, videos, album names, places, and names or contact info are never sent. Sent data is deleted according to Firebase's retention periods (",
+   "ja": "写真、動画、アルバム名、場所、名前や連絡先は送りません。送った情報はFirebaseの保存期間に従って削除されます（",
+   "zh-Hans": "不会发送照片、视频、相簿名称、地点、姓名或联系方式。发送的信息会按照 Firebase 的保留期限删除（",
+   "zh-Hant": "不會傳送照片、影片、相簿名稱、地點、姓名或聯絡方式。傳送的資訊會依照 Firebase 的保留期限刪除（"
+  },
+  {
+   "ko": ">Firebase 개인정보 안내</a>).",
+   "en": ">Firebase privacy information</a>).",
+   "ja": ">Firebaseのプライバシー情報</a>）。",
+   "zh-Hans": ">Firebase 隐私信息</a>）。",
+   "zh-Hant": ">Firebase 隱私權資訊</a>）。"
+  },
+  {
+   "ko": "<h2>문의할 때 보내는 정보</h2>",
+   "en": "<h2>Information Sent When You Contact Us</h2>",
+   "ja": "<h2>問い合わせのときに送る情報</h2>",
+   "zh-Hans": "<h2>联系我们时发送的信息</h2>",
+   "zh-Hant": "<h2>聯絡我們時傳送的資訊</h2>"
+  },
+  {
+   "ko": "앱에서 문의하면 적어 주신 글을 받아요. 메일로 보내면 보내신 메일 주소도 함께 받아 답장에 써요.",
+   "en": "When you contact us from the app, we receive what you write. If you send it by email, we also receive your email address and use it to reply.",
+   "ja": "アプリから問い合わせると、書いていただいた内容を受け取ります。メールで送ると、送信元のメールアドレスも受け取り、返信に使います。",
+   "zh-Hans": "通过 App 联系我们时，我们会收到你写的内容。用邮件发送时，也会收到你的邮件地址并用于回复。",
+   "zh-Hant": "透過 App 聯絡我們時，我們會收到你寫的內容。用郵件傳送時，也會收到你的郵件地址並用於回覆。"
+  },
+  {
+   "ko": "'앱 · 기기 정보 함께 보내기'를 켜 두면(처음부터 켜져 있어요) 문제를 찾는 데 필요한 앱 · iOS 버전, 기기 모델, 언어 · 지역, 사진 권한, 사진 수, 남은 공간, 문의 번호, 최근 오류 종류를 함께 보내요. 끄면 글만 보내요.",
+   "en": "With Include App &amp; Device Info on (it's on by default), the app also sends what's needed to find the problem: app and iOS versions, device model, language and region, photo access, photo count, free space, support ID, and recent error types. Turn it off to send only your message.",
+   "ja": "「アプリ · デバイス情報も送る」をオンにしていると（最初からオンです）、問題を探すのに必要なアプリ・iOSのバージョン、デバイスのモデル、言語・地域、写真へのアクセス権、写真の数、空き容量、問い合わせ番号、最近のエラーの種類もいっしょに送ります。オフにすると本文だけを送ります。",
+   "zh-Hans": "开启“同时发送 App 与设备信息”时（默认开启），会一并发送查找问题所需的 App 和 iOS 版本、设备型号、语言和地区、照片权限、照片数、剩余空间、咨询编号、最近的错误类型。关闭后只发送正文。",
+   "zh-Hant": "開啟「同時傳送 App 與裝置資訊」時（預設開啟），會一併傳送查找問題所需的 App 和 iOS 版本、裝置型號、語言和地區、照片權限、照片數、剩餘空間、詢問編號、最近的錯誤類型。關閉後只傳送內文。"
+  },
+  {
+   "ko": "문의 내용은 답하고 문제를 고치는 데에만 써요.",
+   "en": "We use your message only to reply and fix problems.",
+   "ja": "問い合わせ内容は、返信と問題の修正にだけ使います。",
+   "zh-Hans": "联系内容仅用于回复和修复问题。",
+   "zh-Hant": "聯絡內容僅用於回覆和修復問題。"
+  },
+  {
+   "ko": "<h2>추적하지 않아요</h2>",
+   "en": "<h2>No Tracking</h2>",
+   "ja": "<h2>追跡しません</h2>",
+   "zh-Hans": "<h2>不追踪</h2>",
+   "zh-Hant": "<h2>不追蹤</h2>"
+  },
+  {
+   "ko": "모아북은 광고를 보여 주지 않고, 광고 식별자(IDFA)를 쓰지 않아요. 앱에서 모은 정보를 다른 회사의 정보와 이어 광고에 쓰지 않아요. 이 웹사이트도 방문 통계를 모으지 않고, 바깥 서버에 요청하지 않아요.",
+   "en": "MoaBook shows no ads and doesn't use the advertising identifier (IDFA). Information collected in the app is never combined with other companies' data for advertising. This website also collects no visit stats and makes no requests to outside servers.",
+   "ja": "MoaBookは広告を表示せず、広告識別子（IDFA）を使いません。アプリで集めた情報をほかの会社の情報と結びつけて広告に使うことはありません。このウェブサイトもアクセス解析をせず、外部のサーバにリクエストしません。",
+   "zh-Hans": "MoaBook 不显示广告，也不使用广告标识符（IDFA）。不会把 App 收集的信息与其他公司的信息结合用于广告。本网站也不收集访问统计，不向外部服务器发出请求。",
+   "zh-Hant": "MoaBook 不顯示廣告，也不使用廣告識別碼（IDFA）。不會把 App 收集的資訊與其他公司的資訊結合用於廣告。本網站也不收集瀏覽統計，不向外部伺服器發出請求。"
+  },
+  {
+   "ko": "<h2>다른 곳에 주지 않아요</h2>",
+   "en": "<h2>We Don't Share Your Data</h2>",
+   "ja": "<h2>ほかに渡しません</h2>",
+   "zh-Hans": "<h2>不提供给他人</h2>",
+   "zh-Hant": "<h2>不提供給他人</h2>"
+  },
+  {
+   "ko": "받은 정보를 다른 회사나 사람에게 팔거나 넘기지 않아요. 위의 오류 · 사용 기록은 모아북을 대신해 Google(Firebase)이 처리해요.",
+   "en": "We never sell or hand over the information we receive to other companies or people. The error and usage records above are processed by Google (Firebase) on MoaBook's behalf.",
+   "ja": "受け取った情報をほかの会社や人に売ったり渡したりしません。上のエラー・利用記録は、MoaBookに代わってGoogle（Firebase）が処理します。",
+   "zh-Hans": "不会把收到的信息出售或转交给其他公司或个人。上述错误和使用记录由 Google（Firebase）代表 MoaBook 处理。",
+   "zh-Hant": "不會把收到的資訊出售或轉交給其他公司或個人。上述錯誤和使用紀錄由 Google（Firebase）代表 MoaBook 處理。"
+  },
+  {
+   "ko": "<h2>문의</h2>",
+   "en": "<h2>Contact</h2>",
+   "ja": "<h2>お問い合わせ</h2>",
+   "zh-Hans": "<h2>联系我们</h2>",
+   "zh-Hant": "<h2>聯絡我們</h2>"
+  },
+  {
+   "ko": "개인정보에 관해 궁금한 점은 앱 설정의 '문의하기'나 메일로 보내 주세요.",
+   "en": "For questions about privacy, use Contact Us in the app's Settings or send an email.",
+   "ja": "プライバシーについてのご質問は、アプリの設定の「お問い合わせ」かメールでお送りください。",
+   "zh-Hans": "关于隐私的问题，请通过 App 设置中的“联系我们”或邮件发送。",
+   "zh-Hant": "關於隱私權的問題，請透過 App 設定中的「聯絡我們」或郵件傳送。"
+  },
+  {
+   "ko": "처리방침이 바뀌면 이 페이지와 시행일을 함께 고쳐요.",
+   "en": "If this policy changes, we'll update this page and the effective date. This is a translation of the Korean policy; if they differ, the Korean version applies.",
+   "ja": "ポリシーが変わったときは、このページと施行日をあわせて更新します。これは韓国語のポリシーの翻訳で、内容が異なる場合は韓国語版が優先されます。",
+   "zh-Hans": "政策变更时，我们会同时更新本页面和生效日期。本页为韩语政策的翻译，如有不一致，以韩语版本为准。",
+   "zh-Hant": "政策變更時，我們會同時更新本頁面和生效日期。本頁為韓語政策的翻譯，如有不一致，以韓語版本為準。"
+  },
+  {
+   "ko": "무엇을 도와드릴까요?",
+   "en": "How Can We Help?",
+   "ja": "どうされましたか？",
+   "zh-Hans": "需要什么帮助？",
+   "zh-Hant": "需要什麼幫助？"
+  },
+  {
+   "ko": "자주 묻는 질문을 먼저 살펴보세요.",
+   "en": "Take a look at the frequently asked questions first.",
+   "ja": "まずはよくある質問をご覧ください。",
+   "zh-Hans": "请先看看常见问题。",
+   "zh-Hant": "請先看看常見問題。"
+  },
+  {
+   "ko": "사진이 지워지나요?",
+   "en": "Will my photos get deleted?",
+   "ja": "写真は削除されますか？",
+   "zh-Hans": "照片会被删除吗？",
+   "zh-Hant": "照片會被刪除嗎？"
+  },
+  {
+   "ko": "모아북은 사진을 바로 지우지 않아요. 정리 화면에서 위로 민 사진은 앱 휴지통에 모아만 둬요.",
+   "en": "MoaBook never deletes photos right away. Photos you push up on the cleanup screen are just collected in the app's Trash.",
+   "ja": "MoaBookは写真をすぐには削除しません。整理画面で上にスワイプした写真は、アプリのゴミ箱に集めておくだけです。",
+   "zh-Hans": "MoaBook 不会马上删除照片。在整理画面往上推的照片只会先放进 App 的废纸篓。",
+   "zh-Hant": "MoaBook 不會馬上刪除照片。在整理畫面往上推的照片只會先放進 App 的垃圾桶。"
+  },
+  {
+   "ko": "휴지통에서 직접 '지우기'를 누를 때만 지워지고, 이때 iOS가 한 번 더 물어봐요. 지운 사진도 사진 앱 '최근 삭제된 항목'에 30일 동안 남아 있어요.",
+   "en": "They're deleted only when you tap Delete in the Trash yourself, and iOS asks you once more. Deleted photos also stay in Recently Deleted in Photos for 30 days.",
+   "ja": "ゴミ箱で自分で「削除」をタップしたときだけ削除され、そのときiOSがもう一度確認します。削除した写真も写真アプリの「最近削除した項目」に30日間残ります。",
+   "zh-Hans": "只有你在废纸篓中亲自点按“删除”时才会删除，这时 iOS 还会再确认一次。删除的照片也会在“照片”的“最近删除”中保留 30 天。",
+   "zh-Hant": "只有你在垃圾桶中親自點一下「刪除」時才會刪除，這時 iOS 還會再確認一次。刪除的照片也會在「照片」的「最近刪除」中保留 30 天。"
+  },
+  {
+   "ko": "휴지통에 넣은 사진을 되살리고 싶어요",
+   "en": "I want to bring back photos from the Trash",
+   "ja": "ゴミ箱に入れた写真を戻したいです",
+   "zh-Hans": "想恢复放进废纸篓的照片",
+   "zh-Hant": "想復原放進垃圾桶的照片"
+  },
+  {
+   "ko": "정리 화면 오른쪽 위 휴지통이나 설정의 '휴지통'을 열고, '선택'으로 사진을 고른 뒤 '복원하기'를 누르면 원래대로 돌아와요. 한꺼번에 꺼내려면 '모든 사진 복원하기'를 눌러요.",
+   "en": "Open the Trash from the top right of the cleanup screen or from Settings, choose photos with Select, and tap Restore to put them back. To bring them all back at once, tap Restore All Photos.",
+   "ja": "整理画面の右上のゴミ箱か、設定の「ゴミ箱」を開き、「選択」で写真を選んで「復元」をタップすると元に戻ります。まとめて戻すときは「すべての写真を復元」をタップします。",
+   "zh-Hans": "打开整理画面右上角的废纸篓或设置中的“废纸篓”，用“选择”选好照片后点按“恢复”即可还原。要一次全部恢复，请点按“恢复所有照片”。",
+   "zh-Hant": "打開整理畫面右上角的垃圾桶或設定中的「垃圾桶」，用「選取」選好照片後點一下「復原」即可還原。要一次全部復原，請點一下「復原所有照片」。"
+  },
+  {
+   "ko": "방금 넣은 사진이라면 정리 화면의 되돌리기로 바로 꺼낼 수 있어요. 휴지통을 비운 뒤라면 사진 앱 '최근 삭제된 항목'에서 복구해요.",
+   "en": "If you just put a photo in, Undo on the cleanup screen brings it right back. If you've already emptied the Trash, recover it from Recently Deleted in Photos.",
+   "ja": "入れたばかりの写真なら、整理画面の「取り消す」ですぐに戻せます。ゴミ箱を空にした後なら、写真アプリの「最近削除した項目」から復元します。",
+   "zh-Hans": "如果是刚放进去的照片，可以用整理画面的“撤销”马上取回。如果已清空废纸篓，请到“照片”的“最近删除”中恢复。",
+   "zh-Hant": "如果是剛放進去的照片，可以用整理畫面的「還原」馬上取回。如果已清空垃圾桶，請到「照片」的「最近刪除」中復原。"
+  },
+  {
+   "ko": "구매를 복원하려면 어떻게 하나요?",
+   "en": "How do I restore a purchase?",
+   "ja": "購入を復元するには？",
+   "zh-Hans": "如何恢复购买？",
+   "zh-Hant": "如何恢復購買？"
+  },
+  {
+   "ko": "지금은 결제 없이 모든 기능을 쓸 수 있어요.",
+   "en": "Right now, every feature is available without paying.",
+   "ja": "現在はお支払いなしですべての機能を使えます。",
+   "zh-Hans": "目前无需付费即可使用所有功能。",
+   "zh-Hant": "目前無需付費即可使用所有功能。"
+  },
+  {
+   "ko": "평생 이용권이 생기면 같은 Apple 계정에서는 다시 결제하지 않고 복원할 수 있게 하고, 방법을 여기에 적을게요.",
+   "en": "When a lifetime pass becomes available, you'll be able to restore it on the same Apple Account without paying again, and we'll explain how here.",
+   "ja": "買い切りプランができたら、同じAppleアカウントなら再度支払わずに復元できるようにし、その方法をここに書きます。",
+   "zh-Hans": "推出终身版后，使用同一个 Apple 账户即可免费恢复，方法会写在这里。",
+   "zh-Hant": "推出終身版後，使用同一個 Apple 帳號即可免費恢復，方法會寫在這裡。"
+  },
+  {
+   "ko": "새 iPhone으로 바꾸면 어떻게 되나요?",
+   "en": "What happens when I switch to a new iPhone?",
+   "ja": "新しいiPhoneに替えるとどうなりますか？",
+   "zh-Hans": "换新 iPhone 后会怎样？",
+   "zh-Hant": "換新 iPhone 後會怎樣？"
+  },
+  {
+   "ko": "앨범, 즐겨찾기, 가린 사진은 사진 앱에 있으므로 iCloud 사진을 켜 두면 새 기기에도 그대로 있어요.",
+   "en": "Albums, favorites, and hidden photos live in the Photos app, so with iCloud Photos on they'll be on your new device too.",
+   "ja": "アルバム、お気に入り、非表示にした写真は写真アプリにあるので、iCloud写真をオンにしていれば新しいデバイスにもそのまま残ります。",
+   "zh-Hans": "相簿、个人收藏和隐藏的照片都在“照片”App 里，只要开启 iCloud 照片，新设备上也会保留。",
+   "zh-Hant": "相簿、喜好項目和隱藏的照片都在「照片」App 裡，只要開啟 iCloud 照片，新裝置上也會保留。"
+  },
+  {
+   "ko": "보관 표시, 출석 도장, 고른 친구와 소품 같은 모아북의 기록은 지금은 이 기기에만 저장돼요. iPhone 백업으로 되살리거나 기기 간 옮기기를 쓰면 함께 옮겨져요.",
+   "en": "MoaBook's own records, like Keep marks, Daily Stamps, and your chosen friend and items, are stored only on this device for now. They move along when you restore from an iPhone backup or transfer directly between devices.",
+   "ja": "残す印、毎日スタンプ、選んだ仲間とアイテムといったMoaBookの記録は、今はこのデバイスにだけ保存されます。iPhoneのバックアップから復元するか、デバイス間で直接転送すると一緒に移ります。",
+   "zh-Hans": "保留标记、每日打卡、所选的朋友和道具等 MoaBook 记录目前只保存在这台设备上。用 iPhone 备份恢复或在设备间直接迁移时会一起转移。",
+   "zh-Hant": "保留標記、每日打卡、所選的朋友和道具等 MoaBook 紀錄目前只儲存在這台裝置上。用 iPhone 備份復原或在裝置間直接轉移時會一起轉移。"
+  },
+  {
+   "ko": "답을 찾지 못했나요?",
+   "en": "Didn't find your answer?",
+   "ja": "答えが見つかりませんでしたか？",
+   "zh-Hans": "没有找到答案？",
+   "zh-Hant": "沒有找到答案？"
+  },
+  {
+   "ko": "앱 설정의 '문의하기'나 메일로 보내 주시면 읽고 답해 드려요. 앱에서 보내면 문제를 찾는 데 필요한 앱 · 기기 정보가 함께 와서 더 빨리 도와드릴 수 있어요.",
+   "en": "Send us a message from Contact Us in the app's Settings or by email, and we'll read it and reply. Sending from the app includes the app and device info we need to find the problem, so we can help faster.",
+   "ja": "アプリの設定の「お問い合わせ」かメールでお送りいただければ、読んでお返事します。アプリから送ると、問題を探すのに必要なアプリ・デバイスの情報も届くので、より早くお手伝いできます。",
+   "zh-Hans": "通过 App 设置中的“联系我们”或邮件发送给我们，我们会阅读并回复。从 App 发送会附带查找问题所需的 App 和设备信息，能更快帮到你。",
+   "zh-Hant": "透過 App 設定中的「聯絡我們」或郵件傳送給我們，我們會閱讀並回覆。從 App 傳送會附帶查找問題所需的 App 和裝置資訊，能更快幫到你。"
+  },
+  {
+   "ko": ">메일 보내기<",
+   "en": ">Send Email<",
+   "ja": ">メールを送る<",
+   "zh-Hans": ">发送邮件<",
+   "zh-Hant": ">傳送郵件<"
+  },
+  {
+   "ko": "© 2026 모아북",
+   "en": "© 2026 MoaBook",
+   "ja": "© 2026 MoaBook",
+   "zh-Hans": "© 2026 MoaBook",
+   "zh-Hant": "© 2026 MoaBook"
+  },
+  {
+   "ko": ">모아북<",
+   "en": ">MoaBook<",
+   "ja": ">MoaBook<",
+   "zh-Hans": ">MoaBook<",
+   "zh-Hant": ">MoaBook<"
+  },
+  {
+   "ko": "content=\"모아북\"",
+   "en": "content=\"MoaBook\"",
+   "ja": "content=\"MoaBook\"",
+   "zh-Hans": "content=\"MoaBook\"",
+   "zh-Hant": "content=\"MoaBook\""
+  },
+  {
+   "ko": "</span>모아북</a>",
+   "en": "</span>MoaBook</a>",
+   "ja": "</span>MoaBook</a>",
+   "zh-Hans": "</span>MoaBook</a>",
+   "zh-Hant": "</span>MoaBook</a>"
+  },
+  {
+   "ko": ">모아<",
+   "en": ">Moa<",
+   "ja": ">モア<",
+   "zh-Hans": ">Moa<",
+   "zh-Hant": ">Moa<"
+  },
+  {
+   "ko": ">찰칵<",
+   "en": ">Snap<",
+   "ja": ">カシャ<",
+   "zh-Hans": ">咔嚓<",
+   "zh-Hant": ">咔嚓<"
+  },
+  {
+   "ko": ">폴라<",
+   "en": ">Pola<",
+   "ja": ">ポラ<",
+   "zh-Hans": ">Pola<",
+   "zh-Hant": ">Pola<"
+  },
+  {
+   "ko": ">롤리<",
+   "en": ">Rolly<",
+   "ja": ">ローリー<",
+   "zh-Hans": ">Rolly<",
+   "zh-Hant": ">Rolly<"
+  },
+  {
+   "ko": ">냥이<",
+   "en": ">Kitty<",
+   "ja": ">ニャン<",
+   "zh-Hans": ">喵喵<",
+   "zh-Hant": ">喵喵<"
+  }
+ ]
+}

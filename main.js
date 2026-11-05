@@ -117,12 +117,6 @@ if (picker) {
   const cta = picker.querySelector('[data-pick-cta]')
   const ctaLabel = cta.querySelector('[data-pick-label]')
 
-  /** 받침이 있으면 '이랑', 없으면 '랑' */
-  const withParticle = name => {
-    const code = name.charCodeAt(name.length - 1) - 0xac00
-    return name + (code >= 0 && code % 28 !== 0 ? '이랑' : '랑')
-  }
-
   const choose = (button, { animate = true } = {}) => {
     for (const b of buttons) {
       const selected = b === button
@@ -130,12 +124,12 @@ if (picker) {
       const el = b.querySelector('.char[data-char]')
       setMood(el, selected ? 'cheer' : 'happy', { asBase: true })
     }
-    const character = characterById(button.dataset.pick)
     const color = getComputedStyle(button).getPropertyValue('--theme').trim()
     picker.style.setProperty('--theme', color)
-    who.textContent = character.name
+    // 이름 · 대사 · 버튼 글은 HTML에 언어별로 있습니다(dev/i18n.mjs가 옮김).
+    who.textContent = button.querySelector('.pick-name').textContent
     line.textContent = button.dataset.line
-    ctaLabel.textContent = `${withParticle(character.name)} 정리 시작하기`
+    ctaLabel.textContent = button.dataset.cta
     // 말풍선 꼬리를 고른 친구 쪽으로
     const tail = button.offsetLeft + button.offsetWidth / 2 - bubble.offsetLeft - 6
     bubble.style.setProperty('--tail', `${Math.max(16, Math.min(tail, bubble.offsetWidth - 24))}px`)
