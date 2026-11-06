@@ -417,11 +417,11 @@
    "zh-Hant": "還可以這樣用"
   },
   {
-   "ko": "aria-label=\"더 할 수 있는 일 세 가지\"",
-   "en": "aria-label=\"Three more things you can do\"",
-   "ja": "aria-label=\"ほかにできること3つ\"",
-   "zh-Hans": "aria-label=\"另外三件可以做的事\"",
-   "zh-Hant": "aria-label=\"另外三件可以做的事\""
+   "ko": "aria-label=\"더 할 수 있는 일 네 가지\"",
+   "en": "aria-label=\"Four more things you can do\"",
+   "ja": "aria-label=\"ほかにできること4つ\"",
+   "zh-Hans": "aria-label=\"另外四件可以做的事\"",
+   "zh-Hant": "aria-label=\"另外四件可以做的事\""
   },
   {
    "ko": "정리 탭 &#39;바로 정리&#39;: 연달아 찍은 사진, 중복된 항목, 동영상 용량 줄이기, 오래된 스크린샷, 다 쓴 캡처 칸이 있어요",
@@ -485,6 +485,27 @@
    "ja": "出かけた旅行を地図と日付ごとに見直し、旅行名・日付・写真を入れた共有カードを作って送れます。",
    "zh-Hans": "按地图和日期回看去过的旅行，制作包含旅行名称、日期和照片的分享卡片发送出去。",
    "zh-Hant": "按地圖和日期回顧去過的旅行，製作包含旅行名稱、日期和照片的分享卡片傳送出去。"
+  },
+  {
+   "ko": "사진 뷰어의 공유 메뉴: &#39;공유하기&#39;와 &#39;메타 정보 없이 공유하기&#39;가 있어요",
+   "en": "Share menu in the photo viewer: Share and Share Without Metadata",
+   "ja": "写真ビューアの共有メニュー：「共有」と「メタデータなしで共有」があります",
+   "zh-Hans": "照片查看器的分享菜单：有“分享”和“不含元数据分享”",
+   "zh-Hant": "照片檢視器的分享選單：有「分享」和「不含後設資料分享」"
+  },
+  {
+   "ko": "사진을 보낼 때 '메타 정보 없이 공유하기'를 고르면 위치와 촬영 정보를 지운 사본을 보내요. 원본 사진은 그대로예요.",
+   "en": "When you send a photo, choose Share Without Metadata to send a copy with the location and camera details removed. The original stays as it is.",
+   "ja": "写真を送るときに「メタデータなしで共有」を選ぶと、位置情報と撮影情報を消したコピーを送ります。元の写真はそのままです。",
+   "zh-Hans": "发送照片时选择“不含元数据分享”，就会发送去掉位置和拍摄信息的副本。原照片保持不变。",
+   "zh-Hant": "傳送照片時選擇「不含後設資料分享」，就會傳送去掉位置和拍攝資訊的副本。原照片保持不變。"
+  },
+  {
+   "ko": "위치를 지우고 보내요",
+   "en": "Share Without Your Location",
+   "ja": "位置情報を消して送ります",
+   "zh-Hans": "去掉位置再分享",
+   "zh-Hant": "去掉位置再分享"
   },
   {
    "ko": "사진은 이 기기 안에서만 살펴봐요",
