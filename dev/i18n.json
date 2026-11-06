@@ -627,11 +627,11 @@
    "zh-Hant": "第一次打開時，Moa 在房間裡等你"
   },
   {
-   "ko": "시행일 2026년 11월 5일",
-   "en": "Effective November 5, 2026",
-   "ja": "施行日 2026年11月5日",
-   "zh-Hans": "生效日期 2026年11月5日",
-   "zh-Hant": "生效日期 2026年11月5日"
+   "ko": "시행일 2026년 11월 6일",
+   "en": "Effective November 6, 2026",
+   "ja": "施行日 2026年11月6日",
+   "zh-Hans": "生效日期 2026年11月6日",
+   "zh-Hant": "生效日期 2026年11月6日"
   },
   {
    "ko": "한 줄로 말하면, 사진은 이 기기 안에서만 살펴보고 어디에도 보내지 않아요.",
@@ -697,11 +697,11 @@
    "zh-Hant": "錯誤紀錄：閃退或出錯的程式碼位置、錯誤類型、當時所在的畫面、App 和 iOS 版本、裝置型號"
   },
   {
-   "ko": "사용 기록: 어떤 화면과 기능을 썼는지, 정리한 사진 수 같은 숫자",
-   "en": "Usage records: which screens and features you used, and numbers like how many photos you sorted",
-   "ja": "利用記録：どの画面と機能を使ったか、整理した写真の数などの数字",
-   "zh-Hans": "使用记录：用过哪些画面和功能，以及整理的照片数等数字",
-   "zh-Hant": "使用紀錄：用過哪些畫面和功能，以及整理的照片數等數字"
+   "ko": "사용 기록: 어떤 화면과 기능을 썼는지(결제 화면을 열었는지, 공유 시트를 열었는지 포함), 정리한 사진 수 같은 숫자",
+   "en": "Usage records: which screens and features you used (including whether you opened the purchase screen or the share sheet), and numbers like how many photos you sorted",
+   "ja": "利用記録：どの画面と機能を使ったか（購入画面や共有シートを開いたかを含む）、整理した写真の数などの数字",
+   "zh-Hans": "使用记录：用过哪些画面和功能（包括是否打开了购买画面或共享表单），以及整理的照片数等数字",
+   "zh-Hant": "使用紀錄：用過哪些畫面和功能（包括是否打開了購買畫面或分享表單），以及整理的照片數等數字"
   },
   {
    "ko": "앱 상태: 사진 권한, 사진 수 · 남은 공간의 대략적인 구간, 고른 캐릭터",
@@ -753,11 +753,39 @@
    "zh-Hant": "開啟「同時傳送 App 與裝置資訊」時（預設開啟），會一併傳送查找問題所需的 App 和 iOS 版本、裝置型號、語言和地區、照片權限、照片數、剩餘空間、詢問編號、最近的錯誤類型。關閉後只傳送內文。"
   },
   {
+   "ko": "스크린샷을 붙이면 고른 그림만 크기를 줄여 메일에 붙여요. 위치 · 촬영 정보는 담지 않아요.",
+   "en": "If you attach screenshots, only the images you pick are resized and attached to the email, without location or camera details.",
+   "ja": "スクリーンショットを添付すると、選んだ画像だけを縮小してメールに添付します。位置情報や撮影情報は含めません。",
+   "zh-Hans": "如果附上截屏，只会把你选的图片缩小后附在邮件中，不含位置和拍摄信息。",
+   "zh-Hant": "如果附上截圖，只會把你選的圖片縮小後附在郵件中，不含位置和拍攝資訊。"
+  },
+  {
+   "ko": "메일로 보낼 때 '여행 진단 파일 첨부'를 켜 두면(처음부터 켜져 있어요) 여행마다 날짜와 시각, 사진 수, 집에서 떨어진 거리만 담은 파일을 붙여요. 여행 이름, 사진, 장소, 위치 좌표는 넣지 않고, 보내기 전에 메일에서 열어 볼 수 있어요.",
+   "en": "When you send by email with Attach Trip Diagnostics File on (it's on by default), a file with only each trip's dates and times, photo counts, and distance from home is attached. It doesn't include trip names, photos, places, or location coordinates, and you can open it in Mail before sending.",
+   "ja": "メールで送るときに「旅行の診断ファイルを添付」をオンにしておくと（最初からオンです）、旅行ごとの日付と時刻、写真の枚数、自宅からの距離だけを含むファイルを添付します。旅行名・写真・場所・位置の座標は含めず、送信前にメールで開いて確認できます。",
+   "zh-Hans": "通过邮件发送时，如果打开“附加旅行诊断文件”（默认打开），会附上一个只包含每次旅行的日期和时间、照片数以及离家距离的文件。不包含旅行名称、照片、地点或位置坐标，发送前可以在“邮件”中打开查看。",
+   "zh-Hant": "透過郵件傳送時，如果打開「附加旅行診斷檔案」（預設為打開），會附上一個只包含每次旅行的日期和時間、照片數以及離家距離的檔案。不包含旅行名稱、照片、地點或位置座標，傳送前可以在「郵件」中打開查看。"
+  },
+  {
    "ko": "문의 내용은 답하고 문제를 고치는 데에만 써요.",
    "en": "We use your message only to reply and fix problems.",
    "ja": "問い合わせ内容は、返信と問題の修正にだけ使います。",
    "zh-Hans": "联系内容仅用于回复和修复问题。",
    "zh-Hant": "聯絡內容僅用於回覆和修復問題。"
+  },
+  {
+   "ko": "모아북 프리미엄 결제는 Apple App Store가 처리해요. 모아북은 카드 번호 같은 결제 정보를 받지 않고, 기기에서 Apple이 확인해 준 구매 기록으로 이용권을 확인해요.",
+   "en": "Payments for MoaBook Premium are handled by the Apple App Store. MoaBook never receives payment details such as card numbers; it checks your pass using the purchase record Apple verifies on your device.",
+   "ja": "MoaBook プレミアムの支払いはApple App Storeが処理します。MoaBookはカード番号などの支払い情報を受け取らず、デバイス上でAppleが確認した購入記録でパスを確認します。",
+   "zh-Hans": "MoaBook 高级版的付款由 Apple App Store 处理。MoaBook 不会收到卡号等付款信息，只用 Apple 在设备上验证的购买记录确认你的终身版。",
+   "zh-Hant": "MoaBook 進階版的付款由 Apple App Store 處理。MoaBook 不會收到卡號等付款資訊，只用 Apple 在裝置上驗證的購買紀錄確認你的終身版。"
+  },
+  {
+   "ko": "<h2>구매</h2>",
+   "en": "<h2>Purchases</h2>",
+   "ja": "<h2>購入</h2>",
+   "zh-Hans": "<h2>购买</h2>",
+   "zh-Hant": "<h2>購買</h2>"
   },
   {
    "ko": "<h2>추적하지 않아요</h2>",
@@ -872,18 +900,46 @@
    "zh-Hant": "如何恢復購買？"
   },
   {
-   "ko": "지금은 결제 없이 모든 기능을 쓸 수 있어요.",
-   "en": "Right now, every feature is available without paying.",
-   "ja": "現在はお支払いなしですべての機能を使えます。",
-   "zh-Hans": "目前无需付费即可使用所有功能。",
-   "zh-Hant": "目前無需付費即可使用所有功能。"
+   "ko": "모아북 프리미엄은 한 번 사면 계속 쓰는 평생 이용권이에요(₩22,000). 매달 나가는 결제가 아니에요.",
+   "en": "MoaBook Premium is a lifetime pass you buy once and keep (₩22,000 in Korea; the App Store shows the price for your country). It's not a monthly subscription.",
+   "ja": "MoaBook プレミアムは一度買えばずっと使える買い切りのパスです（韓国では₩22,000。お住まいの国の価格はApp Storeに表示されます）。毎月の支払いではありません。",
+   "zh-Hans": "MoaBook 高级版是一次购买、永久使用的终身版（韩国为 ₩22,000，所在国家或地区的价格以 App Store 显示为准），不是按月扣费。",
+   "zh-Hant": "MoaBook 進階版是一次購買、永久使用的終身版（韓國為 ₩22,000，所在國家或地區的價格以 App Store 顯示為準），不是每月扣款。"
   },
   {
-   "ko": "평생 이용권이 생기면 같은 Apple 계정에서는 다시 결제하지 않고 복원할 수 있게 하고, 방법을 여기에 적을게요.",
-   "en": "When a lifetime pass becomes available, you'll be able to restore it on the same Apple Account without paying again, and we'll explain how here.",
-   "ja": "買い切りプランができたら、同じAppleアカウントなら再度支払わずに復元できるようにし、その方法をここに書きます。",
-   "zh-Hans": "推出终身版后，使用同一个 Apple 账户即可免费恢复，方法会写在这里。",
-   "zh-Hant": "推出終身版後，使用同一個 Apple 帳號即可免費恢復，方法會寫在這裡。"
+   "ko": "새 iPhone으로 바꾸거나 앱을 다시 깔았다면, 같은 Apple 계정으로 앱 설정 '모아북 프리미엄'에서 '구매 복원'을 누르세요. 다시 결제하지 않고 되살아나요. 가족 공유는 지원하지 않아요.",
+   "en": "If you switch to a new iPhone or reinstall the app, open MoaBook Premium in the app's Settings with the same Apple Account and tap Restore Purchase. It comes back without paying again. Family Sharing isn't supported.",
+   "ja": "新しいiPhoneに替えたりアプリを入れ直したりした場合は、同じApple アカウントでアプリの設定「MoaBook プレミアム」を開き、「購入を復元」をタップしてください。もう一度支払わなくても戻ります。ファミリー共有には対応していません。",
+   "zh-Hans": "如果换了新 iPhone 或重新安装了 App，请用同一个 Apple 账户在 App 的设置中打开“MoaBook 高级版”，轻点“恢复购买”。无需再次付款即可恢复。不支持家人共享。",
+   "zh-Hant": "如果換了新 iPhone 或重新安裝了 App，請用同一個 Apple 帳號在 App 的設定中打開「MoaBook 進階版」，點一下「回復購買項目」。不需再次付款即可回復。不支援家人共享。"
+  },
+  {
+   "ko": "여행 앨범은 처음 5곳, 첫 앨범을 만든 뒤 5곳을 더 만들 수 있고, 그 뒤로는 앱을 연 날마다 1곳씩 늘어요. 동영상 용량 줄이기와 라이브 포토를 정지 사진으로 바꾸기는 합쳐서 2GB까지 줄일 수 있어요.",
+   "en": "You can make trip albums for your first 5 trips and 5 more after your first album, then 1 more for each day you open the app. Shrinking videos and converting Live Photos to stills can save up to 2 GB in total.",
+   "ja": "旅行アルバムは最初に5件、最初のアルバムを作った後にさらに5件作れ、その後はアプリを開いた日ごとに1件ずつ増えます。動画の容量を減らす機能とLive Photosを静止画に変換する機能は、合わせて2GBまで減らせます。",
+   "zh-Hans": "旅行相簿一开始可创建 5 个，创建第一个相簿后再加 5 个，之后每打开 App 一天加 1 个。压缩视频和将实况照片转为静态照片两者合计最多可压缩 2 GB。",
+   "zh-Hant": "旅行相簿一開始可建立 5 個，建立第一個相簿後再加 5 個，之後每打開 App 一天加 1 個。壓縮影片與將原況照片轉為靜態照片兩者合計最多可壓縮 2 GB。"
+  },
+  {
+   "ko": "넘겨 보며 정리하기, 휴지통, 보관, 중복 · 비슷한 사진 · 연달아 찍은 사진 묶음 정리는 모두 무료예요.",
+   "en": "Swipe to Sort, the Trash, Keep, and cleaning up groups of duplicates, similar photos, and rapid shots are all free.",
+   "ja": "スワイプで整理、ゴミ箱、残す機能、重複・似ている写真・連続ショットのグループ整理はすべて無料です。",
+   "zh-Hans": "滑动整理、废纸篓、保留，以及重复项目、相似照片和连拍照片的分组整理都是免费的。",
+   "zh-Hant": "滑動整理、垃圾桶、保留，以及重複項目、相似照片和連拍照片的分組整理都是免費的。"
+  },
+  {
+   "ko": "모아북 프리미엄을 사면 여행 앨범과 용량 줄이기를 제한 없이 써요.",
+   "en": "With MoaBook Premium, you can make trip albums and shrink files without limits.",
+   "ja": "MoaBook プレミアムを購入すると、旅行アルバムと容量を減らす機能を制限なく使えます。",
+   "zh-Hans": "购买 MoaBook 高级版后，可以不限量创建旅行相簿和压缩容量。",
+   "zh-Hant": "購買 MoaBook 進階版後，可以不限量建立旅行相簿和壓縮容量。"
+  },
+  {
+   "ko": "무료로 어디까지 쓸 수 있나요?",
+   "en": "What can I use for free?",
+   "ja": "無料でどこまで使えますか？",
+   "zh-Hans": "免费可以用到什么程度？",
+   "zh-Hant": "免費可以用到什麼程度？"
   },
   {
    "ko": "새 iPhone으로 바꾸면 어떻게 되나요?",
@@ -914,11 +970,11 @@
    "zh-Hant": "沒有找到答案？"
   },
   {
-   "ko": "앱 설정의 '문의하기'나 메일로 보내 주시면 읽고 답해 드려요. 앱에서 보내면 문제를 찾는 데 필요한 앱 · 기기 정보가 함께 와서 더 빨리 도와드릴 수 있어요.",
-   "en": "Send us a message from Contact Us in the app's Settings or by email, and we'll read it and reply. Sending from the app includes the app and device info we need to find the problem, so we can help faster.",
-   "ja": "アプリの設定の「お問い合わせ」かメールでお送りいただければ、読んでお返事します。アプリから送ると、問題を探すのに必要なアプリ・デバイスの情報も届くので、より早くお手伝いできます。",
-   "zh-Hans": "通过 App 设置中的“联系我们”或邮件发送给我们，我们会阅读并回复。从 App 发送会附带查找问题所需的 App 和设备信息，能更快帮到你。",
-   "zh-Hant": "透過 App 設定中的「聯絡我們」或郵件傳送給我們，我們會閱讀並回覆。從 App 傳送會附帶查找問題所需的 App 和裝置資訊，能更快幫到你。"
+   "ko": "앱 설정의 '문의하기'나 메일로 보내 주시면 읽고 답해 드려요. 앱에서 보내면 문제를 찾는 데 필요한 앱 · 기기 정보가 함께 오고, 문제가 보이는 화면을 스크린샷으로 3장까지 붙일 수 있어 더 빨리 도와드릴 수 있어요.",
+   "en": "Send us a message from Contact Us in the app's Settings or by email, and we'll read it and reply. Messages from the app include the app and device info we need to find the problem, and you can attach up to 3 screenshots of what you're seeing, so we can help you faster.",
+   "ja": "アプリの設定「お問い合わせ」かメールで送っていただければ、読んでお返事します。アプリから送ると、問題を見つけるのに必要なアプリ・デバイス情報が一緒に届き、問題が見える画面のスクリーンショットを3枚まで添付できるので、より早くお手伝いできます。",
+   "zh-Hans": "通过 App 设置中的“联系我们”或电子邮件发送给我们，我们会阅读并回复。从 App 发送时会附上查找问题所需的 App 与设备信息，还可以附上最多 3 张显示问题的截屏，我们能更快帮到你。",
+   "zh-Hant": "透過 App 設定中的「聯絡我們」或電子郵件傳送給我們，我們會閱讀並回覆。從 App 傳送時會附上找出問題所需的 App 與裝置資訊，也能附上最多 3 張顯示問題的截圖，我們能更快幫上忙。"
   },
   {
    "ko": ">메일 보내기<",
