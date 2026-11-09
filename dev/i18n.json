@@ -1082,6 +1082,27 @@
    "ja": "旅行カードで自慢しましょう",
    "zh-Hans": "用旅行卡片晒一晒吧",
    "zh-Hant": "用旅行卡片曬一曬吧"
+  },
+  {
+   "ko": "다녀온 여행을 찾아 앨범으로 만들어요",
+   "en": "Find your past trips and turn them into albums",
+   "ja": "行った旅行を見つけてアルバムにします",
+   "zh-Hans": "找出去过的旅行，整理成相簿",
+   "zh-Hant": "找出去過的旅行，整理成相簿"
+  },
+  {
+   "ko": "스크린샷 · 중복 · 한 달씩",
+   "en": "Screenshots · Duplicates · Month by month",
+   "ja": "スクショ · 重複 · 1か月ずつ",
+   "zh-Hans": "截屏 · 重复 · 按月整理",
+   "zh-Hant": "截圖 · 重複 · 按月整理"
+  },
+  {
+   "ko": "일부 기능은 앱 내 구입이 필요해요",
+   "en": "Some features require an in-app purchase",
+   "ja": "一部の機能にはApp内課金が必要です",
+   "zh-Hans": "部分功能需要 App 内购买项目",
+   "zh-Hant": "部分功能需要 App 內購買項目"
   }
  ]
 }
