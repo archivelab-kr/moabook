@@ -1,80 +1,116 @@
 <!doctype html>
-<!-- App Store 스크린샷 한 장: dev/store-frames.sh가 ?lang=en&scene=trips&shot=<앱 화면 주소>로 열어 1320×2868로 찍습니다.
-     480×1043 CSS 픽셀로 그리고 2.75배로 찍어, 웹사이트와 같은 크기의 캐릭터 · 말풍선을 씁니다. 문구는 dev/i18n.json(웹사이트 번역표)에서 읽습니다. -->
-<html lang="ko" data-theme="light">
+<!-- App Store 스크린샷 한 장: dev/store-frames.sh가 ?lang=en&scene=trips&shot=<앱 화면 주소>[&device=duo]로 열어 찍습니다.
+     웹사이트 소개 페이지(그 언어 페이지)를 같은 크기의 iframe으로 열고, 그 장면의 카드 하나만 남겨 앱 화면만 바꿉니다.
+     카드 모양 · 문구 · 캐릭터는 웹사이트 그대로라 웹사이트를 고치면 스크린샷도 따라 바뀝니다.
+     - 바형: 440×956 CSS 픽셀(휴대폰 폭 배치: 글 위, 폰 아래)을 3배로 찍어 1320×2868, &size=medium이면 402×874를 3배로 1206×2622
+     - 듀오: 951×669 CSS 픽셀(넓은 화면 배치: 글 · 기기 좌우)을 3배로 찍어 2853×2007, 기기는 펼친 듀오 가로 화면
+     웹사이트에 기능 카드가 없는 장면(처음 실행 · 바로 정리 · 월별 · 공유)은 첫 카드 모양에 그 장면의 글(소개 맨 위 · '이것도 할 수 있어요' 카드)을 넣습니다. -->
+<html lang="ko">
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" href="../site.css">
 <style>
-  html, body { margin: 0; width: 480px; height: 1043px; overflow: hidden; }
-  body { background: color-mix(in srgb, var(--theme) 14%, #fff); word-break: keep-all; }
-  .frame { position: relative; height: 100%; display: flex; flex-direction: column; align-items: center; }
-  .head { width: 100%; box-sizing: border-box; padding: 34px 24px 0; }
-  .speaker { display: flex; align-items: flex-end; gap: 6px; margin-bottom: 0; }
-  .speaker .char { flex: none; }
-  .speaker .bubble { margin-bottom: 18px; font-size: 16px; max-width: none; }
-  h1 { margin: 14px 0 0; font-size: 33px; font-weight: 800; line-height: 1.22; letter-spacing: -0.03em; text-wrap: balance; }
-  .phone {
-    position: absolute; left: 50%; bottom: 20px; transform: translateX(-50%);
-    width: 340px; aspect-ratio: 1320 / 2868; padding: 7px; border-radius: 46px;
-    background: #1c1c1e; box-shadow: 0 18px 40px rgb(0 0 0 / 0.18), 0 0 0 1px rgb(0 0 0 / 0.12);
-  }
-  .phone img { display: block; width: 100%; height: 100%; border-radius: 39px; }
+  html, body { margin: 0; overflow: hidden; background: #fff; }
+  iframe { display: block; border: 0; }
 </style>
 </head>
 <body>
-<div class="frame">
-  <div class="head">
-    <div class="speaker"><span class="char" data-size="84"></span><p class="bubble tail-left"><span class="who"></span><span class="line"></span></p></div>
-    <h1></h1>
-  </div>
-  <figure class="phone"><img alt=""></figure>
-</div>
+<iframe title="웹사이트"></iframe>
 <script type="module">
 import { characterById, toSVG } from '../characters.js'
 
-// 장면마다: 캐릭터 · 말풍선 · 제목(웹사이트 소개 페이지 문구의 한국어 원문, 번역은 i18n.json에서 찾음)
-const SCENES = {
-  'first-run': { char: 'moa', line: '안녕하세요! 오늘은 어떤 사진부터 정리할까요?', title: '사진 정리, <br class="narrow">모아랑 같이 해요' },
-  trips: { char: 'moa', line: '여행마다 앨범을 만들어 봐요', title: '여행별로 앨범을 만들어요' },
-  polish: { char: 'chalkak', line: '비슷한 사진은 한 장만 골라 봐요', title: '비슷한 사진은 한 장만 남겨요' },
-  swipe: { char: 'pola', line: '넘기면서 하나씩 정해요', title: '넘기면서 정리해요' },
-  videos: { char: 'rolly', line: '동영상은 지우지 말고 줄여 봐요', title: '지우지 않고 공간을 비워요' },
-  quick: { char: 'rolly', line: '다 쓴 캡처부터 치워 봐요', title: '스크린샷과 중복 사진을 정리해요' },
-  month: { char: 'pola', line: '이번 달은 다 끝냈어요!', title: '한 달씩 끝내요' },
-  share: { char: 'chalkak', line: '여행 카드로 자랑해 봐요', title: '여행을 카드로 보내요' },
-  room: { char: 'nyang', line: '저를 누르면 한마디 해요', title: '정리할수록 친구 방이 깨끗해져요' }
-}
-const NAMES = { moa: '모아', chalkak: '찰칵', pola: '폴라', rolly: '롤리', nyang: '냥이' }
-const COLORS = { moa: 'var(--moa)', chalkak: 'var(--chalkak)', pola: 'var(--pola)', rolly: 'var(--rolly)', nyang: 'var(--nyang)' }
-
 const params = new URLSearchParams(location.search)
 const lang = params.get('lang') || 'ko'
-const scene = SCENES[params.get('scene')]
-const { rows, store } = await (await fetch('i18n.json')).json()
+const scene = params.get('scene')
+const duo = params.get('device') === 'duo'
+// 바형 크기: large(6.9인치 1320×2868) · medium(6.3인치 1206×2622, App Store Connect 필수 칸)
+const [W, H] = duo ? [951, 669] : params.get('size') === 'medium' ? [402, 874] : [440, 956]
+
+// 웹사이트 기능 카드(제목 id)가 있는 장면
+const FEATURES = { trips: 'f-trip', polish: 'f-polish', swipe: 'f-swipe', videos: 'f-video', room: 'f-room' }
+// 기능 카드가 없는 장면: '이것도 할 수 있어요' 카드 차례 또는 소개 맨 위, 말풍선(한국어 원문, 번역은 i18n.json)
+const OTHERS = {
+  'first-run': { hero: true },
+  quick: { extra: 0, char: 'rolly', line: '다 쓴 캡처부터 치워 봐요' },
+  month: { extra: 1, char: 'pola', line: '이번 달은 다 끝냈어요!' },
+  share: { extra: 2, char: 'chalkak', line: '여행 카드로 자랑해 봐요' }
+}
+const { langs, rows, store } = await (await fetch('i18n.json')).json()
 const t = ko => {
   if (lang === 'ko') return ko
   const row = [...rows, ...store].find(r => r.ko === ko)
   if (!row || row[lang] === undefined) throw new Error(`번역 없음: ${ko}`)
   return row[lang]
 }
+const dir = lang === 'ko' ? '' : `${langs.find(l => l.code === lang).dir}/`
 
-document.documentElement.lang = lang
-document.documentElement.classList.add('js') // site.css는 js 없이는 캐릭터를 숨김
-document.body.style.setProperty('--theme', COLORS[scene.char])
-const char = document.querySelector('.char')
-char.style.setProperty('--size', '84px')
-char.innerHTML = toSVG(characterById(scene.char), { mood: 'cheer' })
-const bubble = document.querySelector('.bubble')
-if (scene.line) {
-  bubble.querySelector('.who').textContent = t(`>${NAMES[scene.char]}<`).slice(1, -1)
-  bubble.querySelector('.who').style.setProperty('--theme', COLORS[scene.char])
-  bubble.querySelector('.line').textContent = t(scene.line)
-} else bubble.remove()
-document.querySelector('h1').innerHTML = t(scene.title)
-const img = document.querySelector('.phone img')
+const frame = document.querySelector('iframe')
+document.body.style.cssText = `width: ${W}px; height: ${H}px`
+frame.width = W
+frame.height = H
+frame.src = `../${dir}index.html`
+await new Promise(resolve => frame.addEventListener('load', resolve, { once: true }))
+const doc = frame.contentDocument
+
+// 카드 고르기 · 만들기
+let card
+if (FEATURES[scene]) {
+  card = doc.getElementById(FEATURES[scene]).closest('article')
+} else {
+  const other = OTHERS[scene]
+  card = doc.getElementById(FEATURES.trips).closest('article').cloneNode(true)
+  const copy = card.querySelector('.feature-copy')
+  const h3 = copy.querySelector('h3')
+  const bubble = copy.querySelector('.bubble')
+  if (other.hero) {
+    const heroBubble = doc.querySelector('.hero-bubble')
+    h3.innerHTML = doc.getElementById('hero-title').innerHTML
+    copy.querySelector('.problem').textContent = doc.querySelector('.hero .lead').textContent
+    copy.querySelector('.answer').remove()
+    bubble.innerHTML = heroBubble.innerHTML
+  } else {
+    const extra = doc.querySelectorAll('.extras-row > li')[other.extra]
+    card.style.setProperty('--theme', extra.style.getPropertyValue('--theme'))
+    h3.textContent = extra.querySelector('h3').textContent
+    copy.querySelector('.problem').remove()
+    copy.querySelector('.answer').textContent = extra.querySelector('p').textContent
+    const name = { rolly: '롤리', pola: '폴라', chalkak: '찰칵' }[other.char]
+    bubble.innerHTML = `<span class="who">${t(`>${name}<`).slice(1, -1)}</span>${t(other.line)}`
+    copy.querySelector('.char').innerHTML = toSVG(characterById(other.char), {})
+  }
+}
+
+// 카드 하나만 남기고 화면 크기에 맞춤(라이트 모드)
+doc.documentElement.dataset.theme = 'light'
+doc.body.replaceChildren(card)
+card.querySelectorAll('.bubble').forEach(b => b.classList.add('is-in'))
+const style = doc.createElement('style')
+style.textContent = `
+  html, body { overflow: hidden; }
+  body { margin: 0; }
+  .feature { box-sizing: border-box; min-height: 100vh; display: flex; align-items: center; }
+  .feature > .wrap { width: 100%; }
+  .feature .phone img { content-visibility: visible; }
+  /* 캐릭터 카드의 덧붙인 문단은 스크린샷에서 넘쳐 뺍니다. */
+  .feature .more { display: none; }
+  ${duo ? `
+  /* 듀오: 기기를 펼친 가로 화면으로, 글 칸 · 기기 칸을 좌우로 */
+  .feature { padding: 0; }
+  .feature > .wrap { box-sizing: border-box; max-width: none; padding: 0 48px; }
+  .feature-grid { grid-template-columns: 1.5fr 1fr !important; gap: 44px !important; }
+  .feature.flip .feature-grid { grid-template-columns: 1fr 1.5fr !important; }
+  .feature .phone { width: 100%; }
+  .feature .phone img { aspect-ratio: 2853 / 2007; border-radius: 26px; }
+  ` : `
+  /* 바형: 글 아래 폰은 화면 아래로 잘려 나가게 위에서부터 둡니다. */
+  .feature { align-items: flex-start; padding-top: 56px; }
+  .feature > .wrap { box-sizing: border-box; max-width: none; padding: 0 28px; }
+  `}`
+doc.head.append(style)
+const img = card.querySelector('.phone img')
+img.loading = 'eager'
 img.src = params.get('shot')
 await img.decode()
+await doc.fonts.ready
 document.body.dataset.ready = '1'
 </script>
 </body>
