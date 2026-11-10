@@ -184,7 +184,7 @@ check('상대 경로만 쓰고 모두 실제 파일', () => {
 })
 
 check('외부 요청 없음 · 바깥 링크는 App Store와 Firebase 개인정보 안내만, 문의는 메일', () => {
-  const appStore = 'https://apps.apple.com/app/id6472587949'
+  const appStore = 'https://apps.apple.com/app/apple-store/id6832420224?pt=120201957&ct=website&mt=8'
   const mail = 'mailto:archivelabapps@gmail.com'
   const allowed = [appStore, 'https://firebase.google.com/support/privacy']
   for (const file of pages) {
@@ -195,6 +195,10 @@ check('외부 요청 없음 · 바깥 링크는 App Store와 Firebase 개인정�
     for (const [, kind, url] of html.matchAll(/data-link="(appstore|mail)"[^>]*href="([^"]+)"/g)) assert.equal(url, kind === 'appstore' ? appStore : mail, relative(root, file))
     assert.ok(!html.includes('forms.gle'), `${relative(root, file)}: 예전 문의 설문`)
   }
+})
+
+check('dev를 뺀 모든 페이지에 Safari 스마트 앱 배너', () => {
+  for (const file of pages.filter(f => !relative(root, f).startsWith('dev/'))) assert.ok(readFileSync(file, 'utf8').includes('<meta name="apple-itunes-app" content="app-id=6832420224">'), relative(root, file))
 })
 
 console.log(`\n${passed}개 통과`)
