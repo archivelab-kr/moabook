@@ -135,7 +135,8 @@ function htmlFiles(dir) {
     if (name.startsWith('.') || name === 'node_modules') return []
     const p = join(dir, name)
     if (statSync(p).isDirectory()) return htmlFiles(p)
-    return name.endsWith('.html') ? [p] : []
+    // 검색 엔진 소유 확인 파일(google….html · naver….html)은 받은 그대로 둬야 해서 검사하지 않음
+    return name.endsWith('.html') && !/^(google|naver)[0-9a-f]+\.html$/.test(name) ? [p] : []
   })
 }
 
@@ -189,11 +190,19 @@ check('외부 요청 없음 · 바깥 링크는 App Store와 Firebase 개인정�
   const allowed = [appStore, 'https://firebase.google.com/support/privacy']
   for (const file of pages) {
     const html = readFileSync(file, 'utf8')
-    const fetches = html.replace(/<link rel="alternate"[^>]+>/g, '') // hreflang 링크는 요청하지 않음
+    const fetches = html.replace(/<link rel="(alternate|canonical)"[^>]+>/g, '') // hreflang · canonical 링크는 요청하지 않음
     assert.ok(!/<(script|link|img|iframe)[^>]+(src|href)="https?:/.test(fetches), relative(root, file))
     for (const [, url] of html.matchAll(/<a[^>]+href="(https?:[^"]+)"/g)) assert.ok(allowed.includes(url), `${relative(root, file)}: ${url}`)
     for (const [, kind, url] of html.matchAll(/data-link="(appstore|mail)"[^>]*href="([^"]+)"/g)) assert.equal(url, kind === 'appstore' ? appStore : mail, relative(root, file))
     assert.ok(!html.includes('forms.gle'), `${relative(root, file)}: 예전 문의 설문`)
+  }
+})
+
+check('sitemap.xml에 dev를 뺀 모든 페이지 주소가 있음', () => {
+  const sitemap = readFileSync(join(root, 'sitemap.xml'), 'utf8')
+  for (const file of pages.filter(f => !relative(root, f).startsWith('dev/'))) {
+    const loc = `<loc>https://archivelab-kr.github.io/moabook/${relative(root, file).replace(/index\.html$/, '')}</loc>`
+    assert.ok(sitemap.includes(loc), loc)
   }
 })
 

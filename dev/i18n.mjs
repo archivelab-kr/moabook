@@ -1,6 +1,7 @@
 // 언어별 페이지 만들기: node dev/i18n.mjs  (확인만: node dev/i18n.mjs --check, 바뀔 파일이 있으면 실패)
 // 한국어 페이지(index.html · privacy/ · support/)가 원문입니다. dev/i18n.json의 rows로 문구를 바꿔 <언어 폴더>/에 쓰고,
-// 모든 언어 페이지에 hreflang 링크와 바닥글 언어 고르기를 넣습니다.
+// 모든 언어 페이지에 canonical · hreflang 링크와 바닥글 언어 고르기를 넣습니다.
+// 검색 엔진에 낼 sitemap.xml(모든 언어의 세 페이지 주소)도 같이 만듭니다.
 // 스크린샷은 assets/shots/<언어 폴더>/에 같은 이름이 있으면 그것을, 없으면 한국어 스크린샷을 씁니다.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs'
 import { join, dirname, posix } from 'node:path'
@@ -48,9 +49,18 @@ function translate(html, lang, page) {
 
 const url = (lang, page) => `${SITE}${lang.dir ? lang.dir + '/' : ''}${page}`
 
+/** 내용이 지금 파일과 다를 때만 쓸 목록에 올림 */
+function queue(name, content) {
+  const file = join(root, name)
+  if (existsSync(file) && readFileSync(file, 'utf8') === content) return
+  changed.push(name)
+  writes.push([file, content])
+}
+
 function inject(html, lang, page) {
   const head = [
     '<!-- i18n:head -->',
+    `<link rel="canonical" href="${url(lang, page)}">`,
     ...langs.map(l => `<link rel="alternate" hreflang="${l.code}" href="${url(l, page)}">`),
     `<link rel="alternate" hreflang="x-default" href="${url(langs[1], page)}">`,
     '<!-- /i18n:head -->'
@@ -77,12 +87,17 @@ for (const page of PAGES) {
   const plain = original.replace(BLOCK, '')
   for (const lang of langs) {
     const html = inject(lang === source ? plain : translate(plain, lang, page), lang, page)
-    const file = join(root, lang.dir, page, 'index.html')
-    if (existsSync(file) && readFileSync(file, 'utf8') === html) continue
-    changed.push(posix.join(lang.dir, page, 'index.html'))
-    writes.push([file, html])
+    queue(posix.join(lang.dir, page, 'index.html'), html)
   }
 }
+
+queue('sitemap.xml', [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  ...PAGES.flatMap(page => langs.map(l => `  <url><loc>${url(l, page)}</loc></url>`)),
+  '</urlset>',
+  ''
+].join('\n'))
 
 // 한국어 문구를 바꾸고 표를 고치지 않으면 옛 줄이 남아 번역이 빠집니다(한국어가 남음 검사와 함께 잡음).
 for (const row of rows) if (!used.has(row.ko)) problems.push(`쓰이지 않는 줄(한국어 원문에서 사라짐) → ${row.ko.slice(0, 40)}`)
